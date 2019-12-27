@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="/css/site.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
+    {%- block head -%}
+    {%- endblock -%}
+  </head>
+  <body>
+    {%- include "main-nav.njk" -%}
+    {%- block content -%}
+    {%- endblock content -%}
+    <!-- Current page: {{ page.url | url }} -->
+  </body>
+</html>

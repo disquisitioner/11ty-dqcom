@@ -1,0 +1,37 @@
+---
+layout: app.njk
+appTitle: Dweet Viewer
+appAuthor: david@orangemoose.com
+appDescription: Display the latest status info from one of the connected devices I've built, via a service called "Dweet"
+appCssList: [ /css/dweetview.css ]
+appJsList: [ /js/dweetview.js, https://dweet.io/client/dweet.io.min.js ]
+tags: app
+---
+<p>
+	Here's a convenient way to see the latest data (in the form of a dweet) from one of my connected home devices. If you're not familiar with Dweet, check out <a href="https://dweet.io">Dweet.io</a>.
+</p>
+<div id="selector">
+	<label class="ctrllabel" for="thingmenu">Which Device?</label>
+	<select id="thingmenu" name="thingmenu">
+		<option value="orangemoose-remotewx" selected>Remote Weather Station</option>
+		<option value="orangemoose-cellar">Cellar Monitor</option>
+		<option value="orangemoose-wxstation">Home Weather Station</option>
+	</select>
+</div>
+<p></p>
+<div class="ctrllabel">Result</div>
+<div id="result">
+	<div>
+		<label class="ctrllabel" for="thing">Name:</label>
+		<span id="thing"></span>
+	</div>
+	<div>
+		<label class="ctrllabel" for="created">Created:</label>
+		<span id="created"></span>
+	</div>
+	<div>
+		<label class="ctrllabel" for="dweet">Dweet contained:</label>
+		<pre id="dweet">...retrieving dweet...</pre></p>
+		<button id="update" type="button">Update</button>
+	</div>
+</div>

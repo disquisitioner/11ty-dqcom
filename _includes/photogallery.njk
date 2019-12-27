@@ -1,0 +1,30 @@
+{% extends 'base.njk' %}
+
+{%- block head -%}
+    <link rel="stylesheet" href="/css/photogallery.css">
+{%- endblock -%}
+
+{% block content %}
+
+<div class="pagehead">
+	<div class="pagetitle">{{ title }}</div>
+	{% if subtitle %}
+	    <div class="pagesubtitle">{{ subtitle }}</div>
+	{% endif %}
+</div>
+
+{{ content | safe }}
+
+<div class="photogallery">
+	<ul>
+	{%- for photo in collections.photo | reverse -%}
+		{%- if photo.data.photolink -%}
+			{%- for pic in photo.data.photolink -%}
+	  		<li><a href="{{ pic | url }}"><img src="{{ pic | url }}"/><a></li>
+	    	{%- endfor -%}
+	  	{%- endif -%}
+	{%- endfor -%}
+	</ul>
+</div>
+
+{% endblock %}

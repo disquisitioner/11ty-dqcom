@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ appTitle }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
+    {% if appDescription %} <meta name="description" content="{{ appDescription }}"> {% endif %}
+    {% if appAuthor %} <meta name="author" content="{{ appAuthor }}">{% endif %}
+    <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
+    {%- if appCssList -%}
+      {%- for cssfile in appCssList -%} 
+        <link rel="stylesheet" href="{{ cssfile | url }}">
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if appJsList -%}
+      {%- for jsfile in appJsList -%} 
+      <script src="{{ jsfile | url }}"></script>
+      {%- endfor -%}
+    {%- endif -%}
+  </head>
+  <body>
+    <header>
+      {%- include "main-nav.njk" -%}
+      <h1 class="apptitle">{{ appTitle }}</a></h1>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: {{ page.url | url }} -->
+  </body>
+</html>

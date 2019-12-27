@@ -1,0 +1,66 @@
+---
+layout: app.njk
+appTitle: Home Weather Station
+appAuthor: david@orangemoose.com
+appDescription: Display recent environmental data from my custom-built home weather station
+appCssList: [ /css/wx_tsplotly.css ]
+appJsList: [ /js/wx_tsplotly.js, https://cdn.plot.ly/plotly-latest.min.js ]
+tags: app
+---
+<div class="control">
+	<div>
+		<label class="ctrllabel" for="plottype">Plot type:</label>
+		<select id="plottype" name="plottype">
+			<option value=0 selected>Inside/Outside Temperature</option>
+			<option value=1>Barometric Pressure</option>
+			<option value=2>Wind Speeds</option>
+			<option value=3>Rainfall</option>
+		</select>
+	</div>
+</div>
+<div class="control">
+	<div>
+		<label class="ctrllabel" for="duration">Plot duration:</label>
+		<select id="duration" name="duration">
+			<option value=1 selected>1 hour</option>
+			<option value=3>3 hours</option>
+			<option value=6>6 hours</option>
+			<option value=12>12 hours</option>
+			<option value=24>24 hours</option>
+			<option value=168>1 week</option>
+		</select>
+	</div>
+</div>
+<div id="chart"></div>
+<div id="stats">
+	<div id="outtemp" class="widget">
+		<span class="stattitle">Outdoors</span>
+		<div class="curval"><span id="curotemp"></span> &deg;F</div>
+		<div><span>Max: </span><span id="maxotemp"></span> &deg;F</div>
+		<div><span>Min: </span><span id="minotemp"></span> &deg;F</div>
+	</div>
+	<div id="intemp" class="widget">
+		<span class="stattitle">Indoors</span>
+		<div class="curval"><span id="curitemp"></span> &deg;F</div>
+		<div><span>Max: </span><span id="maxitemp"></span> &deg;F</div>
+		<div><span>Min: </span><span id="minitemp"></span> &deg;F</div>
+	</div>
+	<div id="barometer" class="widget">
+		<span class="stattitle">Barometer</span>
+		<div class="curval"><span id="curbp"></span> in Hg</div>
+		<div><span>Max: </span><span id="maxbp"></span> in Hg</div>
+		<div><span>Min: </span><span id="minbp"></span> in Hg</div>
+	</div>
+	<div id="wind" class="widget">
+		<span class="stattitle">Wind Speed</span>
+		<div class="curval"><span id="curwind"></span> MPH</div>
+		<div><span>Max: </span><span id="maxwind"></span> MPH</div>
+		<div><span>Gust: </span><span id="maxgust"></span> MPH</div>
+	</div>
+	<div id="rain" class="widget">
+		<span class="stattitle">Rain Today</span>
+		<div class="curval"><span id="raintoday"></span> in</div>
+		<div><span>Max: </span><span id="maxrain"></span> in</div>
+	</div>
+</div>
+<p><pre><div id="rawdata"></div></pre></p>

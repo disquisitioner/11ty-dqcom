@@ -1,0 +1,15 @@
+{% extends 'base.njk' %}
+
+{%- block content -%}
+
+<div class="pagehead">
+	<div class="pagetitle">{{ title }}</div>
+	{%- if subtitle -%}
+		<div class="pagesubtitle">{{ subtitle }}</div>
+	{%- endif -%}
+	<div class="pagedate">Posted: {{ page.date.toLocaleDateString(undefined,{ year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }) }}</div>
+</div>
+
+	{{ content | safe }}
+
+{%- endblock -%}

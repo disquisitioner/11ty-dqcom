@@ -1,0 +1,40 @@
+body {
+  color: #222;
+  background-color: #ebebeb;
+}
+
+.control {
+	padding: 10px;
+}
+
+.ctrllabel {
+	font-weight: 600;
+}
+
+#stats {
+	display: grid;
+	grid-template-columns: 130px 130px 130px 130px 130px;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	padding: 10px;
+}
+
+.stattitle {
+	font-weight: 600; 
+}
+
+.curval {
+	font-size: 1.2em;
+}
+
+.widget{
+	background-color: #FFFFFF;
+	text-align: center;
+	border: 1px solid #666;
+	padding: 10px 0 10px 0; 
+}
+
+#duration, #plottype {
+	font-family: inherit;
+	font-size: 0.8rem;
+}

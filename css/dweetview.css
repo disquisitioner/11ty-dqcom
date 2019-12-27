@@ -1,0 +1,48 @@
+#selector{
+}
+
+#result {
+  margin-left: 16px;
+}
+
+pre {
+  outline: 1px solid #ccc; 
+  padding: 5px; 
+  margin: 5px; 
+  background-color: #ebebeb;
+  font-size: 0.8rem;
+  line-height: 1.0rem;
+}
+.string { 
+  color: #dd00dd; 
+}
+.number { 
+  color: #00af00; 
+}
+.boolean { 
+  color: blue; 
+}
+.null { 
+  color: black; 
+}
+.key { 
+  color: #8080ff; 
+}
+
+.ctrllabel {
+  font-weight: 600;
+}
+
+#update {
+  background: #FF8A00;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#thingmenu {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 5px 0 5px;
+}

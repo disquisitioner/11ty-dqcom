@@ -1,0 +1,32 @@
+/* The 'about me' banner at the top of my home page */
+.homebanner {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 20px;
+}
+
+.homebanner a:link    {color: #000;  text-decoration: none; }
+.homebanner a:visited {color: #000;  text-decoration: none; }
+.homebanner a:hover   {color:#FF8A00; text-decoration: none; }
+
+.myphoto {
+  padding: 0 0 0 0;
+}
+.myintro .title {
+  font-weight: 600;
+}
+.myintro {
+  padding: 0 20px 0 20px;
+}
+.myelsewhere {
+  padding: 0 0 0 20px;
+  font-size: 0.8rem;
+  line-height: 1.05rem;
+  height: 120px;
+}
+
+.hclinks {
+  list-style-type: none;
+  padding: 0px;
+  margin: 20px 0 0 0;
+}

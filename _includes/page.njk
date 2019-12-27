@@ -1,0 +1,14 @@
+{% extends 'base.njk' %}
+
+{% block content %}
+
+<div class="pagehead">
+	<div class="pagetitle">{{ title }}</div>
+	{% if subtitle %}
+	    <div class="pagesubtitle">{{ subtitle }}</div>
+	{% endif %}
+</div>
+
+{{ content | safe }}
+
+{% endblock %}

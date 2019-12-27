@@ -1,0 +1,124 @@
+html {
+  font-family: 'Titillium Web';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4rem;
+}
+
+body {
+  margin: 40px 40px 40px 40px;
+  max-width: 700px;
+}
+
+/* Resize headings (smaller than default) */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Site-wide main navigation bar */
+.navheader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.sitetitle {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.navmenu {
+}
+
+.navmenu ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: .2em 1em;
+  text-align: center;
+  display: inline;
+  font-weight: 600;
+}
+
+.navmenu li {
+  display: inline-block;
+  min-width: 75px;
+  font-weight: 400;
+}
+
+.navheader a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navheader a:hover {
+  color: orange;
+}
+
+/* For pages that have titles & subtitles */
+.pagehead {
+  margin: 0 0 1.8rem 0;
+}
+
+.pagetitle {
+  font-size: 1.75rem; /* Larger than H1! */
+  margin: 0 0 0.4rem 0;
+  font-weight: 600;
+}
+.pagesubtitle {
+  font-size: 1.75rem; /* Smaller than H1 */
+  font-style: italic;
+}
+.pagedate {
+  font-size: 0.8rem;
+}
+
+.apptitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.postlisttitle {
+  font-size: 1.3rem;
+  margin: 0 0 0 0;
+  font-weight: 600;
+}
+.postlistsubtitle {
+  font-size: 1.0rem;
+}
+.postlisttags {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* Style an <hr> to separate posts */
+.postseparator {
+  width: 60%;
+  color: #eee;
+  align: center;
+}
+
+.postbox {
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  /*
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 6px 6px 4px #ccc;
+  */
+}

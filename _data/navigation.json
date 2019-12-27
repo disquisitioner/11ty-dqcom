@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "text": "Articles",
+      "url": "/articles/",
+      "external": false
+    },
+    {
+      "text": "Apps",
+      "url": "/apps/",
+      "external": false
+    },
+    {
+      "text": "Photos",
+      "url": "/photos/",
+      "rel": "me",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about/",
+      "external": false
+    }
+  ]
+}
