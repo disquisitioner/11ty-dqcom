@@ -34,7 +34,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-bottom: 2px solid #ddd;
 }
 
@@ -67,6 +67,47 @@ h4 {
 }
 
 .navheader a:hover {
+  color: orange;
+}
+
+/* For pages that use the footer nav bar */
+.navfooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.footersitetitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.navfootermenu {
+}
+
+.navfootermenu ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: .2em 1em;
+  text-align: center;
+  display: inline;
+  font-weight: 400;
+}
+
+.navfootermenu li {
+  display: inline-block;
+  min-width: 75px;
+}
+
+.navfooter a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navfooter a:hover {
   color: orange;
 }
 
@@ -116,9 +157,4 @@ h4 {
 .postbox {
   margin: 10px 0 10px 0;
   padding: 10px;
-  /*
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 6px 6px 4px #ccc;
-  */
 }

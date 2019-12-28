@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ appTitle }}</title>
+    <link rel="icon" href="/img/David-Bryant-icon128.jpg"/>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
     {% if appDescription %} <meta name="description" content="{{ appDescription }}"> {% endif %}
     {% if appAuthor %} <meta name="author" content="{{ appAuthor }}">{% endif %}
@@ -21,7 +22,6 @@
   </head>
   <body>
     <header>
-      {%- include "main-nav.njk" -%}
       <h1 class="apptitle">{{ appTitle }}</a></h1>
     </header>
 
@@ -29,7 +29,9 @@
       {{ content | safe }}
     </main>
 
-    <footer></footer>
+    <footer>
+      {%- include "footer-nav.njk" -%}
+    </footer>
 
     <!-- Current page: {{ page.url | url }} -->
   </body>
