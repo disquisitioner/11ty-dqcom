@@ -1,0 +1,25 @@
+{
+  "name": "11ty-dqcom",
+  "version": "1.0.0",
+  "description": "Simple blog-oriented web site based on Eleventy",
+  "main": ".eleventy.js",
+  "dependencies": {
+    "luxon": "^1.21.3",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disquisitioner/11ty-dqcom.git"
+  },
+  "author": "david@orangemoose.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/disquisitioner/11ty-dqcom/issues"
+  },
+  "homepage": "https://github.com/disquisitioner/11ty-dqcom#readme"
+}
