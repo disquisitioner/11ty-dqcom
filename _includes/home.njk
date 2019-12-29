@@ -16,7 +16,7 @@
 	  		{%- if post.data.subtitle -%}
 	  			<div class="postlistsubtitle">{{ post.data.subtitle }}</div>
 	  		{%- endif -%}
-	  		<div class="pagedate">Posted: {{ post.date.toLocaleDateString(undefined,{ year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }) }}</div>
+	  		<div class="pagedate">Posted: {{ post.date }}</div>
 	  	</div>
   	{{ post.templateContent | safe }}
 

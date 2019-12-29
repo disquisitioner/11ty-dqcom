@@ -7,9 +7,10 @@
 	{%- if subtitle -%}
 		<div class="pagesubtitle">{{ subtitle }}</div>
 	{%- endif -%}
-	<div class="pagedate">Posted: {{ page.date.toLocaleDateString(undefined,{ year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' }) }}</div>
+	<div class="pagedate">Posted: {{ postdate }}</div>
 </div>
-
+<article class="postbody">
 	{{ content | safe }}
+</article>
 
 {%- endblock -%}

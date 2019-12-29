@@ -1,4 +1,8 @@
 module.exports = function(eleventyConfig) {
+
+  // Add some utility filters
+  eleventyConfig.addFilter("dateDisplay", require("./utils/date.js") );
+
   eleventyConfig.setTemplateFormats([
     "md",
     "html",
