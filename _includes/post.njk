@@ -2,15 +2,18 @@
 
 {%- block content -%}
 
-<div class="pagehead">
-	<div class="pagetitle">{{ title }}</div>
-	{%- if subtitle -%}
-		<div class="pagesubtitle">{{ subtitle }}</div>
-	{%- endif -%}
-	<div class="pagedate">Posted: {{ postdate }}</div>
-</div>
-<article class="postbody">
-	{{ content | safe }}
+<article class="h-entry">
+	<div class="pagehead">
+		<div class="pagetitle p-name">{{ title }}</div>
+		{%- if subtitle -%}
+			<div class="pagesubtitle">{{ subtitle }}</div>
+		{%- endif -%}
+		<div class="pagedate">Posted: <span class="dt-published">{{ postdate }}</span></div>
+	</div>
+
+	<div class="postbody e-content">
+		{{ content | safe }}
+	</div>
 </article>
 
 {%- endblock -%}

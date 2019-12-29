@@ -3,6 +3,7 @@
   display: flex;
   align-items: flex-start;
   padding-bottom: 20px;
+  width: 100%;
 }
 
 .homebanner a:link    {color: #000;  text-decoration: none; }
@@ -10,19 +11,22 @@
 .homebanner a:hover   {color:#FF8A00; text-decoration: none; }
 
 .myphoto {
-  padding: 0 0 0 0;
+  object-fit: contain;
+  flex: 1;
 }
 .myintro .title {
   font-weight: 600;
 }
 .myintro {
   padding: 0 20px 0 20px;
+  flex: 3;
 }
 .myelsewhere {
   padding: 0 0 0 20px;
   font-size: 0.8rem;
   line-height: 1.05rem;
   height: 120px;
+  flex: 1;
 }
 
 .hclinks {
