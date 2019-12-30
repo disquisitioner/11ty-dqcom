@@ -10,5 +10,5 @@ const { DateTime } = require("luxon");
 // formatting.html#table-of-tokens
 
 module.exports = (dateObj, format = "LLL d, y, t, ZZ") => {
-  return "Foo";
+  return DateTime.fromISO(dateObj,{setZone:true}).toFormat(format);
 };

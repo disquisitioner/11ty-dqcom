@@ -2,13 +2,18 @@
 
 {% block content %}
 
-<div class="pagehead">
-	<div class="pagetitle">{{ title }}</div>
-	{% if subtitle %}
-	    <div class="pagesubtitle">{{ subtitle }}</div>
-	{% endif %}
-</div>
+<article class="h-entry">
+	<div class="pagehead">
+		<div class="pagetitle p-name">{{ title }}</div>
+		{% if subtitle %}
+		    <div class="pagesubtitle">{{ subtitle }}</div>
+		{% endif %}
+	</div>
 
-{{ content | safe }}
+	<div class="e-content">
+		{{ content | safe }}
+	</div>
+
+</article>
 
 {% endblock %}

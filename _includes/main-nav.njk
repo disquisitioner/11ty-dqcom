@@ -3,22 +3,41 @@
     <div class="sitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
     <div class="navmenu">
       <ul>
-      {% for item in navigation.items -%}
-        {%- set relAttribute = '' -%}
-        {%- set currentAttribute = '' -%}
-
-        {%- if item.rel -%}
-          {%- set relAttribute = ' rel="' + item.rel + '"' -%}
-        {%- endif -%}
-
-        {%- if page.url == item.url -%}
-          {% set currentAttribute = ' aria-current="page"' %}
-        {%- endif -%}
+        <li>
+          <div class="dropdown">
+            <div class="dropbtn">Articles</div>
+            <div class="dropdown-content">
+              <span class="dropdown-subhead">Latest:</span>
+              {%- for article in collections.article %}
+                {%- if loop.index < 3 -%}
+                  <a class="dropdownitem" href="{{ article.url | url }}">{{ article.data.title }}</a>
+                {%- endif -%}
+              {%- endfor -%}
+              <hr class="dropdownsep" width=30%></hr>
+              <a class="dropdown-exit" href="#">See All Articles...</a>
+            </div>
+          </div> 
+        </li>
 
         <li>
-          <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
+          <div class="dropdown">
+            <div class="dropbtn">Apps</div>
+            <div class="dropdown-content">
+              {%- for app in collections.app -%} 
+                <a class="dropdownitem" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
+              {%- endfor -%}
+            </div>
+          </div> 
         </li>
-      {%- endfor %}
+
+        <li>
+          <a href="/photos">Photos</a>
+        </li>
+
+        <li>
+          <a href="/about">About</a>
+        </li>
+
     </ul>
   </nav>
 {%- endif -%}

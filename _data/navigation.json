@@ -13,7 +13,6 @@
     {
       "text": "Photos",
       "url": "/photos/",
-      "rel": "me",
       "external": false
     },
     {

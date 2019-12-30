@@ -7,7 +7,8 @@ I've built a variety of web applications both as useful utilities, like displayi
 <ul>
 {%- for app in collections.app -%}
   <li>
-  	<a href="{{ app.url }}">{{ app.data.appTitle }}</a> {% if app.data.appDescription %} -- {{ app.data.appDescription }} {% endif %}
+  	<a href="{{ app.url }}">{{ app.data.appTitle }}</a> 
+  	{%- if app.data.appDescription -%} -- {{ app.data.appDescription }} {%- endif -%}
   </li>
 {%- endfor -%}
 </ul>
