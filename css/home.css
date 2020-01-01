@@ -2,7 +2,8 @@
 .homebanner {
   display: flex;
   align-items: flex-start;
-  padding-bottom: 20px;
+  margin-top: 10px;
+  padding-bottom: 10px;
   width: 100%;
 }
 
@@ -18,8 +19,8 @@
   font-weight: 600;
 }
 .myintro {
-  padding: 0 20px 0 20px;
-  flex: 3;
+  padding: 0 10px 0 20px;
+  flex: 4;
 }
 .myelsewhere {
   padding: 0 0 0 20px;

@@ -3,6 +3,7 @@ html {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.4rem;
+  box-sizing: border-box;
 }
 
 body {
@@ -32,15 +33,17 @@ h4 {
 .navheader {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 40px;
+  padding-bottom: 10px;
   border-bottom: 2px solid #ddd;
 }
 
 .sitetitle {
   font-size: 2rem;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .navmenu {
@@ -49,16 +52,15 @@ h4 {
 .navmenu ul {
   list-style-type: none;
   margin: 0 auto;
-  padding: .2em 1em;
-  text-align: center;
+  padding: 0;
+  text-align: left;
   display: inline;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .navmenu li {
   display: inline-block;
-  min-width: 75px;
-  font-weight: 400;
+  padding-right: 20px;
 }
 
 .navheader a {
@@ -111,58 +113,10 @@ h4 {
   color: orange;
 }
 
-/* For pages that have titles & subtitles */
-.pagehead {
-  margin: 0 0 1.8rem 0;
-}
 
-.pagetitle {
-  font-size: 1.75rem; /* Larger than H1! */
-  margin: 0 0 0.4rem 0;
-  font-weight: 600;
-}
-.pagesubtitle {
-  font-size: 1.3rem; /* Smaller than H1 (= H2) */
-  font-style: italic;
-}
-.pagedate {
-  font-size: 0.8rem;
-}
-
-.apptitle {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.postlisttitle {
-  font-size: 1.3rem;
-  margin: 0 0 0 0;
-  font-weight: 600;
-}
-.postlistsubtitle {
-  font-size: 1.0rem;
-}
-.postlisttags {
-  font-size: 0.8rem;
-  text-align: right;
-}
-
-/* Style an <hr> to separate posts */
-.postseparator {
-  width: 60%;
-  color: #eee;
-  align: center;
-}
-
-.postbox {
-  margin: 10px 0 10px 0;
-  padding: 10px;
-}
-
-
-/* Style The Dropdown Button */
+/* Style Dropdown Button for any relevant menus  */
 .dropbtn {
-  padding: 0px 16px;
+  padding: 0px;
   font-weight: 400;
   border: none;
   cursor: pointer;
@@ -228,4 +182,52 @@ h4 {
 }
 .dropdownsep {
   color: #f1f1f1;
+}
+
+/* For pages that have titles & subtitles */
+.pagehead {
+  margin: 0 0 1.8rem 0;
+}
+
+.pagetitle {
+  font-size: 1.75rem; /* Larger than H1! */
+  margin: 0 0 0.4rem 0;
+  font-weight: 600;
+}
+.pagesubtitle {
+  font-size: 1.3rem; /* Smaller than H1 (= H2) */
+  font-style: italic;
+}
+.pagedate {
+  font-size: 0.8rem;
+}
+
+.apptitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.postlisttitle {
+  font-size: 1.3rem;
+  margin: 0 0 0 0;
+  font-weight: 600;
+}
+.postlistsubtitle {
+  font-size: 1.0rem;
+}
+.postlisttags {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* Style an <hr> to separate posts */
+.postseparator {
+  width: 60%;
+  color: #eee;
+  align: center;
+}
+
+.postbox {
+  margin: 10px 0 10px 0;
+  padding: 10px;
 }
