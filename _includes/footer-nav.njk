@@ -1,6 +1,5 @@
 {% if navigation.items %}
   <nav class="navfooter">
-    <div class="footersitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
     <div class="navfootermenu">
       <ul>
       {% for item in navigation.items -%}
@@ -19,6 +18,8 @@
           <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
         </li>
       {%- endfor %}
-    </ul>
+      </ul>
+    </div>
+      <div class="footersitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
   </nav>
 {%- endif -%}

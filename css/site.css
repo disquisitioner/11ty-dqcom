@@ -36,14 +36,14 @@ h4 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 2px solid #ddd;
 }
 
 .sitetitle {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .navmenu {
@@ -76,15 +76,17 @@ h4 {
 .navfooter {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 20px;
+  margin-top: 5px;
   border-top: 2px solid #ddd;
 }
 
 .footersitetitle {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-top: 15px;
 }
 
 .navfootermenu {
@@ -93,15 +95,15 @@ h4 {
 .navfootermenu ul {
   list-style-type: none;
   margin: 0 auto;
-  padding: .2em 1em;
-  text-align: center;
+  padding: 0;
+  text-align: left;
   display: inline;
   font-weight: 400;
 }
 
 .navfootermenu li {
   display: inline-block;
-  min-width: 75px;
+  padding-right: 25px;
 }
 
 .navfooter a {
@@ -186,7 +188,7 @@ h4 {
 
 /* For pages that have titles & subtitles */
 .pagehead {
-  margin: 0 0 1.8rem 0;
+  margin: 20px 0 1.8rem 0;
 }
 
 .pagetitle {
