@@ -14,6 +14,13 @@
 	<div class="postbody e-content">
 		{{ content | safe }}
 	</div>
+
+	{%- if tags.length > 1 -%}
+  	<div class="postlisttags">Tagged with:&nbsp;
+  	{%- for tag in tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
+     </div>
+  	{%- endif -%}
+
 </article>
 
 {%- endblock -%}
