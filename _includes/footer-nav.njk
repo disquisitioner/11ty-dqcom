@@ -1,25 +1,23 @@
-{% if navigation.items %}
-  <nav class="navfooter">
-    <div class="navfootermenu">
-      <ul>
-      {% for item in navigation.items -%}
-        {%- set relAttribute = '' -%}
-        {%- set currentAttribute = '' -%}
+<nav class="navfooter">
+  <div class="navfootermenu">
+    <ul>
+    {% for item in navigation.items -%}
+      {%- set relAttribute = '' -%}
+      {%- set currentAttribute = '' -%}
 
-        {%- if item.rel -%}
-          {%- set relAttribute = ' rel="' + item.rel + '"' -%}
-        {%- endif -%}
+      {%- if item.rel -%}
+        {%- set relAttribute = ' rel="' + item.rel + '"' -%}
+      {%- endif -%}
 
-        {%- if page.url == item.url -%}
-          {% set currentAttribute = ' aria-current="page"' %}
-        {%- endif -%}
+      {%- if page.url == item.url -%}
+        {% set currentAttribute = ' aria-current="page"' %}
+      {%- endif -%}
 
-        <li>
-          <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
-        </li>
-      {%- endfor %}
-      </ul>
-    </div>
-      <div class="footersitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
-  </nav>
-{%- endif -%}
+      <li>
+        <a href="{{ item.url }}"{{ relAttribute | safe }}{{ currentAttribute | safe }}>{{ item.text }}</a>
+      </li>
+    {%- endfor %}
+    </ul>
+  </div>
+    <div class="footersitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
+</nav>

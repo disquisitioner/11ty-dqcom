@@ -1,43 +1,41 @@
-{% if navigation.items %}
-  <nav class="navheader">
-    <div class="sitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
-    <div class="navmenu">
-      <ul>
-        <li>
-          <div class="dropdown">
-            <div class="dropbtn">Articles</div>
-            <div class="dropdown-content">
-              <span class="dropdown-subhead">Latest:</span>
-              {%- for article in collections.article | reverse %}
-                {%- if loop.index < 3 -%}
-                  <a class="dropdownitem" href="{{ article.url | url }}">{{ article.data.title }}</a>
-                {%- endif -%}
-              {%- endfor -%}
-              <hr class="dropdownsep" width=30%></hr>
-              <a class="dropdown-exit" href="/articles">See All Articles...</a>
-            </div>
-          </div> 
-        </li>
+<nav class="navheader">
+  <div class="sitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
+  <div class="navmenu">
+    <ul>
+      <li>
+        <div class="dropdown">
+          <div class="dropbtn">Articles</div>
+          <div class="dropdown-content">
+            <span class="dropdown-subhead">Latest:</span>
+            {%- for article in collections.article | reverse %}
+              {%- if loop.index < 3 -%}
+                <a class="dropdownitem" href="{{ article.url | url }}">{{ article.data.title }}</a>
+              {%- endif -%}
+            {%- endfor -%}
+            <hr class="dropdownsep" width=30%></hr>
+            <a class="dropdown-exit" href="/articles">See All Articles...</a>
+          </div>
+        </div> 
+      </li>
 
-        <li>
-          <div class="dropdown">
-            <div class="dropbtn">Apps</div>
-            <div class="dropdown-content">
-              {%- for app in collections.appsAscending -%} 
-                <a class="dropdownitem" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
-              {%- endfor -%}
-            </div>
-          </div> 
-        </li>
+      <li>
+        <div class="dropdown">
+          <div class="dropbtn">Apps</div>
+          <div class="dropdown-content">
+            {%- for app in collections.appsAscending -%} 
+              <a class="dropdownitem" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
+            {%- endfor -%}
+          </div>
+        </div> 
+      </li>
 
-        <li>
-          <a href="/photos">Photos</a>
-        </li>
+      <li>
+        <a href="/photos">Photos</a>
+      </li>
 
-        <li>
-          <a href="/about">About</a>
-        </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
 
-    </ul>
-  </nav>
-{%- endif -%}
+  </ul>
+</nav>
