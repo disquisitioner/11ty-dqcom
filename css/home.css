@@ -1,37 +1,74 @@
 /* The 'about me' banner at the top of my home page */
+
+@media only screen and (max-width: 720px) {
+/* Narrow (small screen) */
+  .homebanner {
+  }
+  .myintro {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 0.8rem;
+    line-height: 1.05rem;
+  }
+  .myelsewhere {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .myelsewhere li {
+    display: inline-block;
+    font-size: 8px;
+  }
+  .hclinks li:not(:first-child) {
+    padding-left: 6px;
+  }
+  .hclinks li:not(:last-of-type) {
+    padding-right: 6px;
+    border-right: 1px solid #aaa;
+
+  }
+  .hclinktxt {
+    display: none;
+  }
+  .myelsewhere {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* H-card style banner for the top of the home page (only) */
 .homebanner {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 10px;
-  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr; 
   width: 100%;
+  margin-top: 10px;
+}
+
+.myphoto {
+  width: 100%;
+}
+.myintro {
+  padding: 0 10px 0 10px;
+}
+.myelsewhere {
+  padding: 0 0 0 10px;
+  line-height: 1.05rem;
+}
+.myelsewhere li {
+  font-size: 0.8rem;
+}
+
+/* Visual styling */
+.myintro .myname {
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.hclinks {
+  list-style-type: none;
+  padding: 0px;
+  margin: 12px 0 0 0;
 }
 
 .homebanner a:link    {color: #000;  text-decoration: none; }
 .homebanner a:visited {color: #000;  text-decoration: none; }
 .homebanner a:hover   {color:#FF8A00; text-decoration: none; }
-
-.myphoto {
-  object-fit: contain;
-  flex: 1;
-}
-.myintro .title {
-  font-weight: 600;
-}
-.myintro {
-  padding: 0 10px 0 20px;
-  flex: 4;
-}
-.myelsewhere {
-  padding: 0 0 0 20px;
-  font-size: 0.8rem;
-  line-height: 1.05rem;
-  height: 120px;
-  flex: 1;
-}
-
-.hclinks {
-  list-style-type: none;
-  padding: 0px;
-  margin: 20px 0 0 0;
-}

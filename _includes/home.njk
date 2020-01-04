@@ -8,8 +8,9 @@
 {% block content %}
   {{ content | safe }}
 
+<hr class="fancyseparator">
+
 {%- for post in collections.post | reverse -%}
-    <hr class="postseparator">
 	<div class="postbox">
   		<div class="pagehead">
 	  		<div class="postlisttitle">{{ post.data.title }}</div>
@@ -27,7 +28,8 @@
   	{%- endif -%}
 
 	</div>
+  <hr class="postseparator">
 {%- endfor -%}
-<hr class="postseparator">
+
 
 {% endblock %}

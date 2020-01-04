@@ -233,3 +233,11 @@ h4 {
   margin: 10px 0 10px 0;
   padding: 10px;
 }
+
+.fancyseparator {
+  padding: 0;
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(200,200,200,0.75), rgba(0,0,0,0));
+  color: #ddd;
+}
