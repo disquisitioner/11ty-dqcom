@@ -1,0 +1,8 @@
+# Ignore random system files
+.DS_Store
+
+# Ignore local node modules
+node_modules
+
+# Ignore the site Eleventy generates locally
+_site
