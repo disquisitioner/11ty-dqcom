@@ -135,15 +135,27 @@ function drawchart()
 	// Adjust data visibility based on plot type
 	for(i in pdata) { pdata[i].visible = plotlut[p].vismap[i]; }
 
-	// Set soem important plot layout attributes
+	// Set some important plot layout attributes
 	var layout = {
 		title: plotlut[p].title,
+		responsive: true,
+		showlegend: true,
+		legend: {
+			orientation: "h",
+			y: -0.2
+		},
+		displayModeBar: false,
+		margin: {
+			l: 30,
+			r: 30
+		},
 		xaxis: {
 			showline: true
 		},
 		yaxis: {
 			showline: true
 		}
+
 	}
 
 	// Update the data display "widgets" to show current values, max/min, etc.

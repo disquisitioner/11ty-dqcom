@@ -9,6 +9,9 @@ const { DateTime } = require("luxon");
 // From Phil Hawksworth https://github.com/philhawksworth/eleventyone
 // formatting.html#table-of-tokens
 
-module.exports = (dateObj, format = "LLL d, y, t, ZZ") => {
-  return DateTime.fromISO(dateObj,{setZone:true}).toFormat(format);
+module.exports = function(dateObj, format= "ccc LLL d, y 'at' t (ZZZZZ)") {
+	return DateTime.fromISO(dateObj,{setZone:true}).toFormat(format);
 };
+
+// (dateObj, format = "LLL d, y t, ZZ") => {
+  // return DateTime.fromISO(dateObj,{setZone:true}).toFormat("LLL d, y t, ZZZZZ");

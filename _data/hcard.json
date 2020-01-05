@@ -1,0 +1,36 @@
+{
+  "name": "David Bryant",
+  "bio": "Engineer, traveler, photographer, astronomer. Welcome to my home page on the web.",
+  "photo": "/img/David-Bryant-icon128.jpg",
+  "homepage": "https://disquisitioner.com",
+  "items": [
+      {
+      "text": "Email",
+      "icon": "/img/email.png",
+      "url": "mailto:david@disquisitioner.com",
+      "rel": "me"
+    },
+    {
+      "text": "Github",
+      "icon": "/img/github.png",
+      "url": "https://github.com/disquisitioner"
+    },
+    {
+      "text": "Twitter",
+      "icon": "/img/twitter.png",
+      "url": "https://twitter.com/disquisitioner",
+      "rel": "me"
+    },
+    {
+      "text": "Instagram",
+      "icon": "/img/instagram.png",
+      "url": "https://instagram.com/thedavidbryant",
+      "rel": "me"
+    },
+    {
+      "text": "Flickr",
+      "icon": "/img/flickr.png",
+      "url": "https://www.flickr.com/people/david_bryant/"
+    }
+  ]
+} 

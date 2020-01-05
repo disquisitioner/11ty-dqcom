@@ -103,7 +103,7 @@ h4 {
 
 .navfootermenu li {
   display: inline-block;
-  padding-right: 25px;
+  padding-right: 20px;
 }
 
 .navfooter a {
@@ -193,6 +193,7 @@ h4 {
 
 .pagetitle {
   font-size: 1.75rem; /* Larger than H1! */
+  line-height: 1.85rem;
   margin: 0 0 0.4rem 0;
   font-weight: 600;
 }
@@ -206,6 +207,7 @@ h4 {
 
 .apptitle {
   font-size: 2rem;
+  line-height: 2.1rem;
   text-align: center;
 }
 

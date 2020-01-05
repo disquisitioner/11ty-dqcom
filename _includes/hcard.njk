@@ -1,0 +1,27 @@
+{%- if hcard.name -%}
+<div class="homebanner h-card">
+	<img class="myphoto u-photo" src="{{ hcard.photo | url }}">
+	<div class="myintro">
+    	<div class="myname">
+      	<a class="p-name u-url u-uid" href="{{ hcard.homepage | url }}">{{ hcard.name }}</a>
+    	</div>
+    	<div class="mybio">{{ hcard.bio }}</div>
+	</div>
+
+	<div class="myelsewhere">
+		<ul class="hclinks">
+			{%- for item in hcard.items -%}
+				{% set relAttribute = '' %}
+        		{% if item.rel %}
+          			{% set relAttribute = ' rel="' + item.rel + '"' %}
+        		{% endif %}
+			<li>
+	        	<a class="u-email" href="{{ item.url | url }}" {{ relAttribute | safe }}>
+        		<img src="{{ item.icon | url }}" width="16" style="vertical-align:middle">
+        		<span class="hclinktxt">&nbsp;{{ item.text }}</span></a>
+      		</li>
+      		{%- endfor -%}
+  		</ul>
+	</div>
+</div>
+{%- endif -%}

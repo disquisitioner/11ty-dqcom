@@ -6,9 +6,10 @@
 
 
 {% block content %}
-  {{ content | safe }}
+  {%- include "hcard.njk" -%}
+  <hr class="fancyseparator">
 
-<hr class="fancyseparator">
+  {{ content | safe }}
 
 {%- for post in collections.post | reverse -%}
 	<div class="postbox">
@@ -17,7 +18,7 @@
 	  		{%- if post.data.subtitle -%}
 	  			<div class="postlistsubtitle">{{ post.data.subtitle }}</div>
 	  		{%- endif -%}
-	  		<div class="pagedate">Posted: {{ post.date }}</div>
+	  		<div class="pagedate">Posted: {{ post.data.postdate | dateDisplay }}</div>
 	  	</div>
   	{{ post.templateContent | safe }}
 
