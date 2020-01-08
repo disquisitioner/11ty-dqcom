@@ -6,9 +6,9 @@
     --link-color: #0000ee;    /* HTML standard color */
     --linkv-color: #551a8b;   /* HTML standard color */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-colo0; r: #e0e0e0;
-    --dropbtn-bcolor: #f5f5f5;
-    --hrsep-color: #ff8a00;
+    --dropbdr-colo0; r: #e0e0e0;  /* light grey */
+    --dropbtn-bcolor: #f5f5f5;  /* nearly white (background) */
+    --hrsep-color: #ff8a00;   /* Orange! */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,9 +19,9 @@
     --link-color: #80deea;    /* lighter teal than std */
     --linkv-color: #80deea;   /* lighter teal than std */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-color: #424242;
-    --dropbtn-bcolor: #212121;
-    --hrsep-color: #e0e0e0;   /* Orange! */
+    --dropbdr-color: #424242;  /* medium dark gray */
+    --dropbtn-bcolor: #212121;  /* dark gray */
+    --hrsep-color: #ff8a00;   /* Orange! */
   }
 }
 

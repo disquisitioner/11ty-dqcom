@@ -6,9 +6,9 @@
     --link-color: #0000ee;    /* HTML standard color */
     --linkv-color: #551a8b;   /* HTML standard color */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-colo0; r: #e0e0e0;
-    --dropbtn-bcolor: #f5f5f5;
-    --hrsep-color: #e0e0e0;
+    --dropbdr-colo0; r: #e0e0e0;  /* light grey */
+    --dropbtn-bcolor: #f5f5f5;    /* nearly white (background)
+    --hrsep-color: #e0e0e0;   /* light grey */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,9 +19,9 @@
     --link-color: #80deea;    /* lighter teal than std */
     --linkv-color: #80deea;   /* lighter teal than std */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-color: #424242;
-    --dropbtn-bcolor: #212121;
-    --hrsep-color: #e0e0e0;   /* Orange! */
+    --dropbdr-color: #424242; /* medium dark gray */
+    --dropbtn-bcolor: #212121;  /* dark gray */
+    --hrsep-color: #ff8a00;   /* Orange! */
   }
 }
 
@@ -50,7 +50,7 @@
   }
   .hclinks li:not(:last-of-type) {
     padding-right: 6px;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid var(--linkh-color);  /* was #aaa */
 
   }
   .hclinktxt {
@@ -96,6 +96,6 @@
   margin: 12px 0 0 0;
 }
 
-.homebanner a:link    {color: #000;  text-decoration: none; }
-.homebanner a:visited {color: #000;  text-decoration: none; }
-.homebanner a:hover   {color:#FF8A00; text-decoration: none; }
+.homebanner a:link    {color: var(--text-color);  text-decoration: none; }
+.homebanner a:visited {color: var(--text-color);  text-decoration: none; }
+.homebanner a:hover   {color: var(--linkh-color); text-decoration: none; }
