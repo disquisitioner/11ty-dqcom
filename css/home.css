@@ -1,3 +1,30 @@
+:root {
+    --page-background: #fff;  /* white */
+    --text-color: #000;       /* black */
+    --sectxt-color: #bdbdbd;  /* medium grey */
+    --navsep-color: #e0e0e0;  /* same as hrsep? */
+    --link-color: #0000ee;    /* HTML standard color */
+    --linkv-color: #551a8b;   /* HTML standard color */
+    --linkh-color: #ff8a00;   /* Orange! */
+    --dropbdr-colo0; r: #e0e0e0;
+    --dropbtn-bcolor: #f5f5f5;
+    --hrsep-color: #e0e0e0;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #121212;  /* very dark grey */
+    --text-color: #fff;       /* white */
+    --sectxt-color: #bdbdbd;  /* medium grey */
+    --navsep-color: #ff8a00;  /* same as hrsep? */
+    --link-color: #80deea;    /* lighter teal than std */
+    --linkv-color: #80deea;   /* lighter teal than std */
+    --linkh-color: #ff8a00;   /* Orange! */
+    --dropbdr-color: #424242;
+    --dropbtn-bcolor: #212121;
+    --hrsep-color: #e0e0e0;   /* Orange! */
+  }
+}
+
 /* The 'about me' banner at the top of my home page */
 
 @media only screen and (max-width: 720px) {
