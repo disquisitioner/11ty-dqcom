@@ -3,6 +3,33 @@
  * https://codepen.io/jensimmons/pen/BKPGov?editors=1100)
  */
 
+ :root {
+     --page-background: #fff;  /* white */
+    --text-color: #000;       /* black */
+    --dropbdr-color: #e0e0e0;  /* light grey */
+    --dropbtn-bcolor: #f5f5f5;  /* nearly white (background) */
+    --majsep-color: #e0e0e0;
+    --minsep-color: #e0e0e0;
+    --link-color: #0000ee;    /* HTML standard color */
+    --linkv-color: #551a8b;   /* HTML standard color */
+    --linkh-color: #ff8a00;   /* Orange! */
+    --shadow-color: 0,0,0;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #121212;  /* very dark grey */
+    --text-color: #fff;       /* white */
+    --dropbdr-color: #424242;  /* medium dark gray */
+    --dropbtn-bcolor: #212121;  /* dark gray */
+    --majsep-color: #ff8a00;
+    --minsep-color: #424242;
+    --link-color: #80deea;    /* lighter teal than std */
+    --linkv-color: #80deea;   /* lighter teal than std */
+    --linkh-color: #ff8a00;   /* Orange! */
+    --shadow-color: 255,255,255;
+  }
+}
+
 .photogallery * {
   box-sizing: border-box;
 }
@@ -25,6 +52,6 @@
   object-fit: cover;
   margin-top: 0px;
   margin-bottom: 20px;
-  border: 1px solid black;
-  box-shadow: 1px 3px 8px rgba(0,0,0,0.5);
+  border: 1px solid var(--text-color);
+  box-shadow: 1px 3px 8px rgba(var(--shadow-color),0.5);
 }

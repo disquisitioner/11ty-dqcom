@@ -1,27 +1,27 @@
 :root {
-    --page-background: #fff;  /* white */
+     --page-background: #fff;  /* white */
     --text-color: #000;       /* black */
-    --sectxt-color: #bdbdbd;  /* medium grey */
-    --navsep-color: #e0e0e0;  /* same as hrsep? */
+    --dropbdr-color: #e0e0e0;  /* light grey */
+    --dropbtn-bcolor: #f5f5f5;  /* nearly white (background) */
+    --majsep-color: #e0e0e0;
+    --minsep-color: #e0e0e0;
     --link-color: #0000ee;    /* HTML standard color */
     --linkv-color: #551a8b;   /* HTML standard color */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-colo0; r: #e0e0e0;  /* light grey */
-    --dropbtn-bcolor: #f5f5f5;    /* nearly white (background)
-    --hrsep-color: #e0e0e0;   /* light grey */
+    --shadow-color: 0,0,0;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --page-background: #121212;  /* very dark grey */
     --text-color: #fff;       /* white */
-    --sectxt-color: #bdbdbd;  /* medium grey */
-    --navsep-color: #ff8a00;  /* same as hrsep? */
+    --dropbdr-color: #424242;  /* medium dark gray */
+    --dropbtn-bcolor: #212121;  /* dark gray */
+    --majsep-color: #ff8a00;
+    --minsep-color: #424242;
     --link-color: #80deea;    /* lighter teal than std */
     --linkv-color: #80deea;   /* lighter teal than std */
     --linkh-color: #ff8a00;   /* Orange! */
-    --dropbdr-color: #424242; /* medium dark gray */
-    --dropbtn-bcolor: #212121;  /* dark gray */
-    --hrsep-color: #ff8a00;   /* Orange! */
+    --shadow-color: 255,255,255;
   }
 }
 
@@ -50,7 +50,7 @@
   }
   .hclinks li:not(:last-of-type) {
     padding-right: 6px;
-    border-right: 1px solid var(--linkh-color);  /* was #aaa */
+    border-right: 1px solid var(--minsep-color);  /* was #aaa */
 
   }
   .hclinktxt {
