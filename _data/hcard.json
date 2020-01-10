@@ -1,7 +1,7 @@
 {
   "name": "David Bryant",
   "bio": "Engineer, traveler, photographer, astronomer. Welcome to my home page on the web.",
-  "photo": "/img/David-Bryant-icon128.jpg",
+  "photo": "/img/David-Bryant-600x.png",
   "homepage": "https://disquisitioner.com",
   "items": [
       {
@@ -12,7 +12,7 @@
     },
     {
       "text": "Github",
-      "icon": "/img/github.png",
+      "icon": "/img/github-icon-x.png",
       "url": "https://github.com/disquisitioner"
     },
     {
