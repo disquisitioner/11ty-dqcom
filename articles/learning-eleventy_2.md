@@ -3,6 +3,7 @@ layout: page.njk
 title: Figuring out Eleventy (part 2)
 subtitle: Still not easy, but working!
 description: Figuring out how to deploy to Netlify, plus further site feature development using Eleventy and Nunjucks.
+date: 2019-12-30T08:35-08:00
 tags: article
 ---
 # First Painful Deploy

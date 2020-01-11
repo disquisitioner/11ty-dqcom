@@ -3,6 +3,7 @@ layout: page.njk
 title: Figuring out Eleventy (part 1)
 subtitle: Not as easy as you'd think...
 description: Lessons learned building this site using Eleventy, my first time effort with a static site generator.
+date: 2019-12-26T13:44-08:00
 tags: article
 ---
 <h1>Getting Started</h1>

@@ -1,0 +1,27 @@
+{% extends 'base.njk' %}
+
+{% block content %}
+
+<div class="pagehead">
+	<div class="pagetitle">{{ title }}</div>
+	{% if subtitle %}
+	    <div class="pagesubtitle">{{ subtitle }}</div>
+	{% endif %}
+</div>
+
+{{ content | safe }}
+
+<ul>
+{% for article in collections.article | reverse -%}
+  <li>
+  	<a href="{{ article.url }}">{{ article.data.title }}</a>
+    {%- if article.data.description -%}
+  	  &nbsp; -- {{ article.data.description }}&nbsp;({{ article.data.date | dateDisplay("LLL d, y") }})
+  	  {%- else -%}
+  	  &nbsp; -- {{ article.data.date | dateDisplay("LLL d, y") }}
+  	{%- endif -%}
+  </li>
+{%- endfor %}
+</ul>
+
+{% endblock %}

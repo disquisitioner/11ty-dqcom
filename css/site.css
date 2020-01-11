@@ -9,6 +9,7 @@
     --linkv-color: #551a8b;   /* HTML standard color */
     --linkh-color: #ff8a00;   /* Orange! */
     --shadow-color: 0,0,0;
+    --pre-color: #e0e0e0;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,6 +23,7 @@
     --linkv-color: #80deea;   /* lighter teal than std */
     --linkh-color: #ff8a00;   /* Orange! */
     --shadow-color: 255,255,255;
+    --pre-color: #424242;
   }
 }
 
@@ -61,6 +63,28 @@ h4 {
   font-size: 1rem;
   font-weight: 600;
 }
+
+pre {
+  width: 100%;
+  padding: 0px;
+  margin: 0;
+  overflow: auto;
+  overflow-y: hidden;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  background: var(--pre-color);
+  border: 1px solid var(--text-color);
+}
+pre code {
+  padding: 0px;
+  color: var(--text-color);
+}
+code {
+  padding: 2px 6px 2px 6px;
+  background-color: var(--pre-color);
+  font-size: 0.9rem;
+}
+
 
 /* Site-wide main navigation bar */
 .navheader {

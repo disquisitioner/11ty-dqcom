@@ -1,5 +1,6 @@
 # Ignore random system files
 .DS_Store
+**/.DS_Store
 
 # Ignore local node modules
 node_modules

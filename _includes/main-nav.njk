@@ -8,7 +8,7 @@
           <div class="dropdown-content">
             <span class="dropdown-subhead">Latest:</span>
             {%- for article in collections.article | reverse %}
-              {%- if loop.index < 3 -%}
+              {%- if loop.index < 4 -%}
                 <a class="dropdownitem" href="{{ article.url | url }}">{{ article.data.title }}</a>
               {%- endif -%}
             {%- endfor -%}
