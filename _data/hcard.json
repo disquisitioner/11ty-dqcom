@@ -13,7 +13,8 @@
     {
       "text": "Github",
       "icon": "/img/github-icon-x.png",
-      "url": "https://github.com/disquisitioner"
+      "url": "https://github.com/disquisitioner",
+      "rel": "me"
     },
     {
       "text": "Twitter",
