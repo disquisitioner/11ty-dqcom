@@ -8,7 +8,7 @@
 		{%- if subtitle -%}
 			<div class="pagesubtitle">{{ subtitle }}</div>
 		{%- endif -%}
-		<div class="pagedate">Posted: <span class="dt-published">{{ date | dateDisplay }}</span></div>
+		<div class="pagedate">Posted: <time class="dt-published" datetime="{{ date }}">{{ date | dateDisplay }}</time></div>
 	</div>
 
 	<div class="postbody e-content">
