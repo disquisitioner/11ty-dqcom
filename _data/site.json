@@ -2,12 +2,11 @@
   "showThemeCredit": true,
   "name": "Disquisitioner.com",
   "shortDesc": "David Bryant's website. Welcome!",
-  "url": "https://disquisitioner.com",
+  "url": "https://wwww.disquisitioner.com",
   "authorEmail": "david@disquisitioner.com",
-  "authorHandle": "@disquisitioner",
+  "authorHandle": "@david_bryant",
   "authorName": "David Bryant",
   "enableThirdPartyComments": false,
   "maxPostsPerPage": 5,
-  "paymentPointer": "$coil.xrptipbot.com/c1f8f05d-8d8c-4f37-b1ad-25677ae129da",
   "faviconPath": "/images/favicon.png"
 }
