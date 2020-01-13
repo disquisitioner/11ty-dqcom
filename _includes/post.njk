@@ -19,7 +19,7 @@
 
 	{%- if tags.length > 1 -%}
   	<div class="postlisttags">Tagged with:&nbsp;
-  	{%- for tag in tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
+  	{%- for tag in tags -%} {%- if tag != "post" -%} #<span class="p-category">{{ tag }}<span>&nbsp; {%- endif -%} {%- endfor -%}
      </div>
   	{%- endif -%}
 
