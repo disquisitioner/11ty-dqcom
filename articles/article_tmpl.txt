@@ -1,0 +1,9 @@
+---
+layout: page.njk
+title: Article Title
+description: Summarizing sentences
+photolink: [/photos/photo1.jpeg]
+date: yyyy-mm-ddThh:mm-zz:zz
+tags: [article, photo, tag1]
+---
+<a class="piclink" href="/photos/photo1.jpeg"><img src="/photos/photo1.jpeg" width="100%"></a>
