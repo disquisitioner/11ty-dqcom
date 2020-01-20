@@ -25,7 +25,7 @@
     <div class="postlistfoot">
       <div class="wm_summary" id="wm_sum{{loop.index}}"></div>
       <script type="text/javascript">
-        fetch("https://webmention.io/api/count.json?target={{site.url | url }}{{ post.url | url }}")
+        fetch("https://webmention.io/api/count.json?target={{ post.url | url | absoluteUrl(site.url) }}")
           .then(response => {return(response.text());})
           .then(myJson => {showCounts({{loop.index}},JSON.parse(myJson));});
       </script>

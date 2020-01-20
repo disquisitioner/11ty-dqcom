@@ -1,9 +1,14 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function(eleventyConfig) {
 
+  // Add plugins
+  eleventyConfig.addPlugin(pluginRss);
+  
   // Add some utility filters
   eleventyConfig.addFilter("dateDisplay", require("./utils/date.js") );
 
-  // custom collection that sorts Applications alphabetically by title
+  // Custom collection that sorts Applications alphabetically by title
   // Use: {%- for item in collections.appsAscending -%}
   // Assumes individual apps will be listed as *.html in the apps subfolder
   eleventyConfig.addCollection("appsAscending", (collection) =>
