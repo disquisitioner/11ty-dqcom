@@ -22,10 +22,17 @@
 	  	</div>
   	{{ post.templateContent | safe }}
 
-  	{%- if post.data.tags.length > 1 -%}
-  	<div class="postlisttags">Tagged with:&nbsp;
-  	{%- for tag in post.data.tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
-     </div>
+    <div class="postlistfoot">
+      <div class="wm_summary" id="wm_sum{{loop.index}}"></div>
+      <script type="text/javascript">
+        fetch("https://webmention.io/api/count.json?target={{site.url | url }}{{ post.url | url }}")
+          .then(response => {return(response.text());})
+          .then(myJson => {showCounts({{loop.index}},JSON.parse(myJson));});
+      </script>
+      {%- if post.data.tags.length > 1 -%}
+      	<div class="postlisttags">
+          {%- for tag in post.data.tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
+        </div>
   	{%- endif -%}
 
 	</div>
