@@ -1,0 +1,62 @@
+--- 
+layout: app.njk
+appTitle: Webcam Window
+appAuthor: david@disquisitioner.com
+appDescription: Windows to interesting places around the world through a collection of webcams.
+appCssList: [ /css/webcams.css ]
+appJsList: [ /js/webcams.js ]
+tags: [ app ]
+webcams: 
+  - 
+    label: "Look Rock, Great Smoky Mountains"
+    url: "https://www.nps.gov/featurecontent/ard/webcams/images/grsm.jpg"
+  - 
+    label: "Clingmans Dome, Great Smoky Mountains"
+    url: "https://www.nps.gov/featurecontent/ard/webcams/images/grcd.jpg"
+  -
+    label: "Grand Canyon National Park"
+    url: "https://www.nps.gov/featurecontent/ard/webcams/images/grca.jpg"
+  -
+    label: "Grand Teton National Park"
+    url: "https://www.nps.gov/featurecontent/ard/webcams/images/grte.jpg"
+  -
+    label: "Yosemite High Sierra"
+    url: "https://pixelcaster.com/yosemite/webcams/sentinel.jpg"
+  -
+    label: "Augustine Island Volcano (Alaska)"
+    url: "https://avo.alaska.edu/webcam/augtst.jpg"
+  -
+    label: "Kilauea Crater from HVO Observation Tower"
+    url: "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg"
+  -
+    label: "Kilauea Lower East Rift Zone"
+    url: "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg"
+---
+
+<div class="camgallery">
+	{% for cam in webcams %}
+	<figure>
+		<img src="{{ cam.url }}" onclick="openModal();currentCam({{ loop.index }});" class="thumb" alt="{{cam.label}}">
+		<figcaption>{{cam.label}}</figcaption>
+	</figure>
+	{% endfor %}
+
+</div>
+
+<div id="modal" class="modal">
+	<div class="modal-backdrop"></div>
+	<div class="modal-body">
+		<span class="modal-close" id="close" onclick="closeModal()">&times;</span>
+
+		{% for cam in webcams %}
+			<img class="webcam" src="{{cam.url}}">
+		{% endfor %}
+
+	    <!-- Next/previous controls -->
+	    <a class="prev" onclick="plusCam(-1)">&#10094;</a>
+	    <a class="next" onclick="plusCam(1)">&#10095;</a>
+
+	    <!-- Caption text -->
+	    <div class="caption" id="caption"></div>
+	</div>
+</div> 
