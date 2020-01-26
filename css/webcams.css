@@ -74,6 +74,11 @@ body {
   object-fit: cover;
   max-width: 100%;
 }
+.camfooter {
+    margin: 20px 20px 20px 0px;
+    font-size: 0.8rem;
+    text-align: right;
+}
 
 .modal {
   display: none;
