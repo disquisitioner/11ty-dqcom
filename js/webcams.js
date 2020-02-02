@@ -1,3 +1,5 @@
+var camIndex = 1;
+
 // Arrange to call a function to kick things off once the page is loaded
 document.addEventListener('DOMContentLoaded',function() {
   timedRefresh(300000);
@@ -15,9 +17,6 @@ function openModal() {
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
-
-var camIndex = 1;
-showCams(camIndex);
 
 // Next/previous controls
 function plusCam(n) {
@@ -51,27 +50,15 @@ function timedRefresh(timeoutPeriod) {
 
 function updateWindow(){
     location.reload(true);
-    showdate();
+    showDate();
 }
 
 function showDate()
 {
-  var now = new Date();
-  var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-  var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
-  var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
-  
-  tnow=new Date();
-  thour=now.getHours();
-  tmin=now.getMinutes();
-  tsec=now.getSeconds();
-  
-  if (tmin<=9) { tmin="0"+tmin; }
-  if (tsec<=9) { tsec="0"+tsec; }
-  if (thour<10) { thour="0"+thour; }
-  
-  today = days[now.getDay()] + ", " + date + " " + months[now.getMonth()] + ", " + (fourdigits(now.getYear())) + " - " + thour + ":" + tmin +":"+ tsec;
-  document.getElementById("dateDiv").innerHTML = today;
+  // Streamline handling Date & Time using Luxon 
+  var now = new luxon.DateTime.local(); 
+
+  document.getElementById("dateDiv").innerHTML = now.toFormat("ccc LLL d, y 'at' t '(UTC'Z')'");;
 }
 
 function fourdigits(number)
