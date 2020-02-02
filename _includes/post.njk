@@ -4,7 +4,7 @@
 
 <article class="h-entry">
 	<a class="u-author h-card" href="/"></a> 
-	<a class="u-url" href="{{page.url}}"></a>
+	<a class="u-url" href="{{page.url | url }}"></a>
 	<div class="pagehead">
 		<div class="pagetitle p-name">{{ title }}</div>
 		{%- if subtitle -%}
@@ -17,11 +17,20 @@
 		{{ content | safe }}
 	</div>
 
-	{%- if tags.length > 1 -%}
-  	<div class="postlisttags">Tagged with:&nbsp;
-  	{%- for tag in tags -%} {%- if tag != "post" -%} #<span class="p-category">{{ tag }}</span>&nbsp; {%- endif -%} {%- endfor -%}
-     </div>
-  	{%- endif -%}
+    <div class="postlistfoot">
+        <div class="wm_summary" id="wm_sum1"></div>
+        <script type="text/javascript">
+            fetch("https://webmention.io/api/count.json?target={{ page.url | url | absoluteUrl(site.url) }}")
+            .then(response => {return(response.text());})
+            .then(myJson => {showCounts(1,JSON.parse(myJson));});
+        </script>
+
+        {%- if tags.length > 1 -%}
+            <div class="postlisttags">
+          			{%- for tag in tags -%} {%- if tag != "post" -%} #<span class="p-category">{{ tag }}</span>&nbsp;{%- endif -%} {%- endfor -%}
+            </div>
+        {%- endif -%}
+    </div>
 
 </article>
 

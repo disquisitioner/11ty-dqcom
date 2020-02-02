@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded',function() {
 
 },false);
 
+function pluralize(count,singular,plural) {
+    if(count == 1) return singular;
+    else           return plural;
+}
+
 /*
  * Display counters of webmentions.  Types of webmentions
  * that might occur are:
@@ -52,7 +57,7 @@ function showCounts(index, data) {
         li.setAttribute('class','micon');
         li.innerHTML = 
         '<i class="material-icons md-18">star_border</i>&nbsp;' + data.type.like +
-        '<span class="miconlabel">&nbsp;likes</span>';
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.like,"like","likes") + '</span>';
         m_icons.appendChild(li);
     }
 
@@ -61,8 +66,8 @@ function showCounts(index, data) {
         var li = document.createElement("LI");
         li.setAttribute('class','micon');
         li.innerHTML = 
-        '<i class="material-icons md-18">chat_bubble_outline</i>&nbsp;' + 
-        data.type.reply + '<span class="miconlabel">&nbsp;replies</span>';
+        '<i class="material-icons md-18">chat_bubble_outline</i>&nbsp;' + data.type.reply +
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.reply,"reply","replies") + '</span>';
         m_icons.appendChild(li);
     }
 
@@ -71,8 +76,8 @@ function showCounts(index, data) {
         var li = document.createElement("LI");
         li.setAttribute('class','micon');
         li.innerHTML = 
-        '<i class="material-icons md-18">repeat</i>&nbsp;' + 
-        data.type.repost + '<span class="miconlabel">&nbsp;reposts</span>';
+        '<i class="material-icons md-18">repeat</i>&nbsp;' + data.type.repost + 
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.repost,"repost","reposts") + '</span>';
         m_icons.appendChild(li);
     }
 
@@ -81,8 +86,8 @@ function showCounts(index, data) {
         var li = document.createElement("LI");
         li.setAttribute('class','micon');
         li.innerHTML = 
-        '<i class="material-icons-outlined md-18">description</i>&nbsp;' + 
-        data.type.mention + '<span class="miconlabel">&nbsp;mentions</span>';
+        '<i class="material-icons-outlined md-18">description</i>&nbsp;' + data.type.mention +
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.mention,"mention","mentions") + '</span>';
         m_icons.appendChild(li);
     }
 
@@ -91,8 +96,8 @@ function showCounts(index, data) {
         var li = document.createElement("LI");
         li.setAttribute('class','micon');
         li.innerHTML = 
-        '<i class="material-icons md-18">bookmark_border</i>&nbsp;' + 
-        data.type.bookmark + '<span class="miconlabel">&nbsp;bookmarks</span>';
+        '<i class="material-icons md-18">bookmark_border</i>&nbsp;' + data.type.bookmark +
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.bookmark,"bookmark","bookmarks") + '</span>';
         m_icons.appendChild(li);
     }
 
@@ -100,8 +105,8 @@ function showCounts(index, data) {
         var li = document.createElement("LI");
         li.setAttribute('class','micon');
         li.innerHTML = 
-        '<i class="material-icons md-18">event</i>&nbsp;' + 
-        data.type.rsvp + '<span class="miconlabel">&nbsp;RSVPs</span>';
+        '<i class="material-icons md-18">event</i>&nbsp;' + data.type.rsvp +
+        '<span class="miconlabel">&nbsp;' + pluralize(data.type.rsvp,"RSVP","RSVPs") + '</span>';
         m_icons.appendChild(li);
     }
 }

@@ -29,7 +29,18 @@
 
 @media only screen and (max-width: 720px) {
   /* Narrow (small screen) */
-  .miconlabel { display: none; }
+  body {
+    margin: 5vh 5vw;
+  }
+  .miconlabel { display: none; }  /* Webmention icon labels */
+}
+
+@media only screen and (min-width: 720px) {
+  /* Other (not-narrow) screens */
+  body {
+    margin: 40px 40px 40px 40px;
+    max-width: 700px;
+  }
 }
 
 html {
@@ -43,8 +54,6 @@ html {
 }
 
 body {
-  margin: 40px 40px 40px 40px;
-  max-width: 700px;
 }
 
 a:link { color: var(--link-color); }
@@ -312,6 +321,7 @@ code {
   color: var(--majsep-color);
 }
 
+/* Styling for displaying webmentions */
 .wm_summary {
 }
 
@@ -331,7 +341,7 @@ code {
 }
 
 
-/* Rules for sizing the icon. */
+/* Rules for sizing icons. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
