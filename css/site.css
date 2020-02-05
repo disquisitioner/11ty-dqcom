@@ -224,6 +224,7 @@ code {
   padding: 2px 8px 2px 24px;
   display: block;
   font-weight: 300;
+  min-height: 1.5rem;
 }
 
 .dropdown-subhead {
@@ -275,6 +276,9 @@ code {
 }
 .pagedate {
   font-size: 0.8rem;
+}
+.pagedate a {
+  text-decoration: none;
 }
 
 .apptitle {
