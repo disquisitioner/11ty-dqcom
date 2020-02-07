@@ -1,10 +1,10 @@
 ---
-layout: page.njk
+layout: article.njk
 title: Figuring out Eleventy (part 2)
 subtitle: Still not easy, but working!
 description: Figuring out how to deploy to Netlify, plus further site feature development using Eleventy and Nunjucks.
 date: 2019-12-30T08:35-08:00
-tags: article
+tags: [ article, webdev ]
 ---
 # First Painful Deploy
 Installing Eleventy locally on my development machine made it super easy to iteratively build and test, especially thanks to Eleventy's continuous [serve & reload mode](https://www.11ty.dev/docs/usage/#re-run-eleventy-when-you-save).  Having gotten a basic site built leveraging lessons highlighted in [part 1](/articles/learning-eleventy/) of this series, I was ready to try deploying to Netlify.

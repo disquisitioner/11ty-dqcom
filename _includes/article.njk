@@ -1,0 +1,34 @@
+{% extends 'base.njk' %}
+
+{% block content %}
+
+<article class="h-entry">
+	<div class="pagehead">
+		<div class="pagetitle p-name">{{ title }}</div>
+		{% if subtitle %}
+		    <div class="pagesubtitle">{{ subtitle }}</div>
+		{% endif %}
+	</div>
+
+	<div class="e-content">
+		{{ content | safe }}
+	</div>
+
+    <div class="postlistfoot">
+        <div class="wm_summary" id="wm_sum1"></div>
+        <script type="text/javascript">
+            fetch("https://webmention.io/api/count.json?target={{ page.url | url | absoluteUrl(site.url) }}")
+            .then(response => {return(response.text());})
+            .then(myJson => {showCounts(1,JSON.parse(myJson));});
+        </script>
+
+        {%- if tags.length > 1 -%}
+            <div class="postlisttags">
+          			{%- for tag in tags -%} {%- if tag != "article" -%} #<span class="p-category">{{ tag }}</span>&nbsp;{%- endif -%} {%- endfor -%}
+            </div>
+        {%- endif -%}
+    </div>
+
+</article>
+
+{% endblock %}

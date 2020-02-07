@@ -1,9 +1,9 @@
 ---
-layout: page.njk
+layout: article.njk
 title: Enabling Dark Mode Support
 description: Easily enabling automatically dark mode support on a web page/site using CSS, as I've done here on disquisitioner.com
 date: 2020-01-11T10:44-08:00
-tags: [article, web development]
+tags: [article, webdev]
 ---
 Motivated by Deja Hodge's [excellent video](https://www.youtube.com/watch?v=jmepqJ5UbuM) on the Mozilla Developer channel on YouTube (which is where I get _lots_ of inspiration and insight about building things for the web), I wanted to add dark mode support to disquisitioner.com.  I've started to use dark mode on my Windows, MacOS, iOS and Android devices and have seen an increasing number of web sites support both.
 
