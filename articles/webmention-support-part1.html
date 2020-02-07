@@ -1,0 +1,49 @@
+---
+layout: page.njk
+title: Enabling Webmentions
+description: Initial steps adding Webmention support to an Eleventy-based site
+date: 2020-02-06T08:28-08:00
+tags: [article, indieweb]
+---
+<p>
+The <a href="https://indieweb.org/">Indieweb movement</a> is all about controlling all your content by publishing it on your own site and selectively syndicating it from there to anywhere else you want it to appear.  How, then, do you enable popular shared social experiences such as conversations across people's posts, likes and resharing?  These are easy when everyone's content is all on the same site (like Facebook or Twitter), but harder to implement otherwise.
+</p>
+<p>
+The answer is <a href="https://indieweb.org/Webmention">Webmention</a>, a standard for federating comments, likes, reposts, and other rich interactions across the decentralized social web.  Eleventy doesn't incorporate support for Webmention, and as a static site generator it's not obvious how to add that support on your own.
+</p>
+Max Böck, who has done a lot of great work with Eleventy, has an <a href="https://mxb.dev/blog/using-webmentions-on-static-sites/">excellent post</a> describing in detail his approach to using webmentions on static sites.  There's a lot to do to get all Max's elements in place and rather than try everything all at once I realized from his article that I could take a simple first step to render mentions and/or mention counts on any of the posts or articles on my site.  As Max's post suggests the key to that is <a href="https://webmention.io">Webmention.io</a>, a third party service that can receive webmentions on behalf of your site and provides an API for retrieving your webmention data at any time.
+<p>
+</p>
+<p>
+First, I registered with <a href="https://webmention.io">Webmention.io</a> and followed the instructions there to add the necessary link tags to my site's main page.  Easy.
+</p>
+<p>
+Next I added a snippet of Javascript as an embedded script on all my Eleventy page templates that render a post or article.  Those pages already had a footer section at the bottom of each post to display post-related tags so adding that embedded script was easy.  It retrieves webmention information from Webmention.io whenever the page is loaded and passes it to a second Javascript function that'll dynamically write the information into the page:
+<pre><code class="language-html">&lt;div class=&quot;wm_summary&quot; id=&quot;wm_sum&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    fetch(&quot;https://webmention.io/api/count.json?target=https://www.disquisitioner.com/this_post_url&quot;)
+    .then(response =&gt; {return(response.text());})
+    .then(myJson =&gt; {showMentions(JSON.parse(myJson));});
+&lt;/script&gt;</code></pre>
+</p>
+<p>
+That second Javascript function resides in my site-wide Javascript file to process the received webmention data and add it as appropriate to the post footer:
+<pre><code class="language-javascript">function showMentions(data) {
+    // If no webmentions of any kind then just return
+    if(data.count &equals;= 0) return;
+
+    // A container &lt;div&gt; was created in the HTML to hold webmention info
+    var m_div = document.getElementById("wm_sum");
+    m_div.innerHTML = data.count + " webmentions";
+}</code></pre>
+</p>
+<p>
+To make things easy I just wanted to show a icon-based summary such of webmention counts such as:
+<img src="/img/webmention_icons.png" width="100%">
+which is little more than a stylized unordered list and an icon font.  Later on I'll want to come back and display more webmention information such as the mentioning author, a link to their post, and the date it was published.
+</p>
+<p>
+For my home page, which strings together a number of posts to produce a timeline, the script embedded in HTML assigns a different unique id to each post footer and passes an additional parameter to the <code>showMentions()</code> function accordingly.  Doing that with a templating engine like Nunjucks is easy as I'm already building the page by looping through an Eleventy collection so can just use the loop counter as part of the post footer's id.
+</p>
+<p>
+If you want to know more you'll find all the code on <a href="https://github.com/disquisitioner/11ty-dqcom">Github</a>
