@@ -78,6 +78,15 @@ h4 {
   font-weight: 600;
 }
 
+code[class*="language-"] {
+ border-radius:0 !important;
+ overflow-x:scroll !important;
+ white-space:pre !important;
+ display:block !important;
+ font-size:1.25vw;
+}
+
+/*
 pre {
   width: 100%;
   padding: 0px;
@@ -98,6 +107,7 @@ code {
   background-color: var(--pre-color);
   font-size: 0.9rem;
 }
+*/
 
 
 /* Site-wide main navigation bar */
@@ -277,9 +287,14 @@ code {
 .pagedate {
   font-size: 0.8rem;
 }
+
+/* The 'Published' date for posts can be a link to the post */
 .pagedate a {
   text-decoration: none;
 }
+.pagedate a:link { color: var(--text-color); }
+.pagedate a:visited { color: var(--text-color); }
+.pagedate a:hover { color: var(--linkh-color); }
 
 .apptitle {
   font-size: 2rem;
