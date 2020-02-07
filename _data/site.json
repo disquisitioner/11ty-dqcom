@@ -1,12 +1,9 @@
 {
-  "showThemeCredit": true,
   "name": "Disquisitioner.com",
-  "shortDesc": "David Bryant's website. Welcome!",
+  "description": "David Bryant -- Engineer, traveler, photographer, astronomer. Welcome to my home page on the web.",
   "url": "https://www.disquisitioner.com",
   "authorEmail": "david@disquisitioner.com",
   "authorHandle": "@david_bryant",
   "authorName": "David Bryant",
-  "enableThirdPartyComments": false,
-  "maxPostsPerPage": 5,
-  "faviconPath": "/images/favicon.png"
+  "authorAvatar": "/img/David-Bryant-600x.png"
 }
