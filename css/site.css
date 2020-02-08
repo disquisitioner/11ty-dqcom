@@ -83,7 +83,7 @@ code[class*="language-"] {
  overflow-x:scroll !important;
  white-space:pre !important;
  display:block !important;
- font-size:1.25vw;
+ font-size: 0.7rem;
 }
 
 /*

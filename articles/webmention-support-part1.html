@@ -3,7 +3,7 @@ layout: article.njk
 title: Enabling Webmentions
 description: Initial steps adding Webmention support to an Eleventy-based site
 date: 2020-02-06T08:28-08:00
-tags: [article, indieweb]
+tags: [article, indieweb, webdev]
 ---
 <p>
 The <a href="https://indieweb.org/">Indieweb movement</a> is all about controlling all your content by publishing it on your own site and selectively syndicating it from there to anywhere else you want it to appear.  How, then, do you enable popular shared social experiences such as conversations across people's posts, likes and resharing?  These are easy when everyone's content is all on the same site (like Facebook or Twitter), but harder to implement otherwise.
@@ -38,12 +38,14 @@ That second Javascript function resides in my site-wide Javascript file to proce
 }</code></pre>
 </p>
 <p>
-To make things easy I just wanted to show a icon-based summary such of webmention counts such as:
-<img src="/img/webmention_icons.png" width="100%">
-which is little more than a stylized unordered list and an icon font.  Later on I'll want to come back and display more webmention information such as the mentioning author, a link to their post, and the date it was published.
+To make things easy I just wanted to show a icon-based summary of webmention counts such as:
+<p style="text-align: center"><img src="/img/webmention_icons.png" width="75%"></p>
+which is little more than a stylized unordered list and an icon font.  (You'll see that at the bottom of this page, by the way.) Later on I'll want to come back and display more webmention information such as the mentioning author, a link to their post, and the date it was published.
 </p>
 <p>
 For my home page, which strings together a number of posts to produce a timeline, the script embedded in HTML assigns a different unique id to each post footer and passes an additional parameter to the <code>showMentions()</code> function accordingly.  Doing that with a templating engine like Nunjucks is easy as I'm already building the page by looping through an Eleventy collection so can just use the loop counter as part of the post footer's id.
 </p>
 <p>
-If you want to know more you'll find all the code on <a href="https://github.com/disquisitioner/11ty-dqcom">Github</a>
+	One other tip: However you intend to implement webmentions on your site you should make full advantage of <a href="https://webmention.rocks">webmention.rocks</a>, which provides all sorts of tools for testing webmentions. For my simple initial effort I just needed the receiver tests, but as I add more webmention functionality I'll need the other tests there too. 
+<p>
+If you want to know more you'll find all my code on <a href="https://github.com/disquisitioner/11ty-dqcom">Github</a>
