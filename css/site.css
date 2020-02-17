@@ -231,7 +231,8 @@ code {
 }
 /* Links inside the dropdown */
 .dropdownitem {
-  padding: 2px 8px 2px 24px;
+  padding: 2px 8px 2px 36px;
+  text-indent: -12px;
   display: block;
   font-weight: 300;
   min-height: 1.5rem;
