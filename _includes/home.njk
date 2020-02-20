@@ -11,34 +11,38 @@
 
     {{ content | safe }}
 
-    {%- for post in collections.post | reverse -%}
-    	<div class="postbox">
-    		<div class="pagehead">
-      		    <div class="postlisttitle">{{ post.data.title }}</div>
-      		    {%- if post.data.subtitle -%}
-      			   <div class="postlistsubtitle">{{ post.data.subtitle }}</div>
-      		    {%- endif -%}
-      		    <div class="pagedate"><a href="{{post.url}}">Posted: {{ post.data.date | dateDisplay }}</a></div>
+    <section class="h-feed">
+
+        {%- for post in collections.post | reverse -%}
+        	<div class="postbox h-entry">
+        		<div class="pagehead">
+          		    <div class="postlisttitle p-name">{{ post.data.title }}</div>
+          		    {%- if post.data.subtitle -%}
+          			   <div class="postlistsubtitle">{{ post.data.subtitle }}</div>
+          		    {%- endif -%}
+          		    <div class="pagedate"><a href="{{post.url}}" class="u-url">Posted: {{ post.data.date | dateDisplay }}</a></div>
+                </div>
+
+                {{ post.templateContent | safe }}
+
+                <div class="postlistfoot">
+                    <div class="wm_summary" id="wm_sum{{loop.index}}"></div>
+                    <script type="text/javascript">
+                        fetch("https://webmention.io/api/count.json?target={{ post.url | url | absoluteUrl(site.url) }}")
+                        .then(response => {return(response.text());})
+                        .then(myJson => {showCounts({{loop.index}},JSON.parse(myJson));});
+                    </script>
+
+                    {%- if post.data.tags.length > 1 -%}
+                        <div class="postlisttags">
+                            {%- for tag in post.data.tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
+                        </div>
+                    {%- endif -%}
+                </div>
+                <hr class="postseparator">
             </div>
+        {%- endfor -%}
 
-            {{ post.templateContent | safe }}
-
-            <div class="postlistfoot">
-                <div class="wm_summary" id="wm_sum{{loop.index}}"></div>
-                <script type="text/javascript">
-                    fetch("https://webmention.io/api/count.json?target={{ post.url | url | absoluteUrl(site.url) }}")
-                    .then(response => {return(response.text());})
-                    .then(myJson => {showCounts({{loop.index}},JSON.parse(myJson));});
-                </script>
-
-                {%- if post.data.tags.length > 1 -%}
-                    <div class="postlisttags">
-                        {%- for tag in post.data.tags -%} {%- if tag != "post" -%} #{{ tag }}&nbsp; {%- endif -%} {%- endfor -%}
-                    </div>
-                {%- endif -%}
-            </div>
-            <hr class="postseparator">
-        </div>
-    {%- endfor -%}
+    </section>
 
 {% endblock %}
