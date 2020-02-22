@@ -5,5 +5,5 @@
 [[redirects]]
 	from = "https://www.disquisitioner.com/posts/post_rsvp_iws2020/*"
 	to = "https://www.disquisitioner.com/410.html"
-	status = 410
+	status = 301
 	force = true
