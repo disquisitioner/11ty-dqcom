@@ -1,0 +1,9 @@
+{% extends 'base.njk' %}
+
+{% block head %}
+    <meta http-equiv="Status" content="410 Gone"/>
+{% endblock %}
+
+{% block content %}
+	{{ content | safe }}
+{% endblock %}
