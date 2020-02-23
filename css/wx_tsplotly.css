@@ -30,8 +30,12 @@
 body {
   color: var(--text-color);
   background-color: var(--page-background);
+  max-width: none;
 }
 
+.chart {
+    width: 100%;
+}
 .control {
 	padding: 10px;
 }

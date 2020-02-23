@@ -7,6 +7,9 @@
  	// Register a handler so we can process changes in the chart 'duration' selection
     document.querySelector('select[name="duration"]').onchange=changeDurationHandler;
 
+    // Register a handler to redraw the chart if the browser window resizes
+    window.addEventListener('resize', drawchart);
+
     // Make sure the plot drawn matches the selected duration, even on page reload
     var d = getduration();
 
