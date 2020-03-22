@@ -1,0 +1,118 @@
+html {
+  font-family: 'Titillium Web';
+  font-size: calc(1vw + 1vh + 1.5vmin);  /* Special */
+  font-weight: 300;
+  line-height: 1.4rem;
+  background-color: #010a00;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px 40px 40px 40px;
+  max-width: none; /* OVERRIDE STANDARD */
+}
+
+a:link { color: #80deea; }
+a:visited { color: #80deea; }
+a:hover { color: #ff8a00; }
+
+h1 {
+  font-weight: 400;
+  font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flicker {
+  animation: flicker2 4s ;
+}
+
+.neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #80deea,
+    0 0 80px #80deea,
+    0 0 90px #80deea,
+    0 0 100px #80deea,
+    0 0 150px #80deea;
+}
+
+.neoff {
+  color: #010;
+  text-shadow:
+   -1px -1px 0 #888,  
+    1px -1px 0 #888,
+    -1px 1px 0 #888,
+     1px 1px 0 #888;
+}
+
+.plain {
+  font-size: 18px;
+  padding-top: 2em;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes flicker2 {
+	0% {
+		opacity: 0.4;
+	}
+	5% {
+		opacity: 0.5;
+	}
+	10% {
+		opacity: 0.6;
+	}
+	15% {
+		opacity: 0.85;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	30% {
+		opacity: 1;
+	}
+	35% {
+		opacity: 0.1;
+	}
+	40% {
+		opacity: 0.25;
+	}
+	45% {
+		opacity: 0.5;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0.85;
+	}
+	80% {
+		opacity: 0.4;
+	}
+	90% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
