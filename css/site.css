@@ -85,6 +85,21 @@ code[class*="language-"] {
  display:block !important;
  font-size: 0.7rem;
 }
+figure {
+  margin: 0;
+  position: relative;
+}
+figcaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: left;
+  padding: 5px;
+  mix-blend-mode: screen;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
 
 /*
 pre {
