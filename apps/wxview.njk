@@ -1,5 +1,4 @@
 ---
-layout: app.njk
 appTitle: Home Weather Station
 appAuthor: david@orangemoose.com
 appDescription: Display recent environmental data from my custom-built home weather station
@@ -7,6 +6,23 @@ appCssList: [ /css/wx_tsplotly.css ]
 appJsList: [ /js/wx_tsplotly.js, https://cdn.plot.ly/plotly-latest.min.js ]
 tags: [ app ]
 ---
+{% extends 'app.njk' %}
+
+{% block apphead %}
+	<!-- icon images thanks to vectr.com and iconifier.net -->
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="./images/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="./images/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="./images/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./images/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="./images/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon-180x180.png" />
+{% endblock apphead %}
+
+{% block appcontent %}
 <div class="control">
 	<div>
 		<label class="ctrllabel" for="plottype">Plot type:</label>
@@ -64,3 +80,4 @@ tags: [ app ]
 	</div>
 </div>
 <p><pre><div id="rawdata"></div></pre></p>
+{% endblock appcontent %}

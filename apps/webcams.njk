@@ -1,5 +1,4 @@
 --- 
-layout: app.njk
 appTitle: Webcam Window
 appAuthor: david@disquisitioner.com
 appDescription: Windows to interesting places around the world through a collection of webcams.
@@ -32,7 +31,9 @@ webcams:
     label: "Kilauea Lower East Rift Zone"
     url: "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg"
 ---
+{% extends 'app.njk' %}
 
+{% block appcontent %}
 <div class="camgallery">
 	{% for cam in webcams %}
 	<figure>
@@ -63,3 +64,4 @@ webcams:
 	    <div class="caption" id="caption"></div>
 	</div>
 </div> 
+{% endblock appcontent %}

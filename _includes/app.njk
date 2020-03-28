@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ appTitle }}</title>
+{% extends 'base.njk' %}
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
-
-    <link rel="icon" href="/img/David-Bryant-icon128.jpg"/>
+{% block head %}
     {% if appDescription %} <meta name="description" content="{{ appDescription }}"> {% endif %}
     {% if appAuthor %} <meta name="author" content="{{ appAuthor }}">{% endif %}
     <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
@@ -21,18 +10,22 @@
       {%- endfor -%}
     {%- endif -%}
     {%- if appJsList -%}
-      {%- for jsfile in appJsList -%} 
+      {%- for jsfile in appJsList %} 
       <script src="{{ jsfile | url }}"></script>
-      {%- endfor -%}
+      {% endfor -%}
     {%- endif -%}
-  </head>
-  <body>
+    {% block apphead %}
+    {% endblock apphead %}
+{% endblock head %}
+
+{% block content %}
     <header>
       <h1 class="apptitle">{{ appTitle }}</a></h1>
     </header>
 
     <main>
-      {{ content | safe }}
+      {% block appcontent %}
+      {% endblock appcontent %}
     </main>
 
     <footer>
@@ -40,5 +33,4 @@
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->
-  </body>
-</html>
+{% endblock content %}
