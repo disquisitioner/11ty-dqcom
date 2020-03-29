@@ -21,7 +21,7 @@
 	{%- for photo in collections.photo | reverse -%}
 		{%- if photo.data.photolink -%}
 			{%- for pic in photo.data.photolink -%}
-	  		<li><a href="{{ pic | url }}"><img src="{{ pic | url }}"/><a></li>
+	  		<li><a href="{{ photo.url | url }}"><img src="{{ pic | url }}"/><a></li>
 	    	{%- endfor -%}
 	  	{%- endif -%}
 	{%- endfor -%}
