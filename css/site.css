@@ -101,6 +101,12 @@ figcaption {
   font-weight: 400;
 }
 
+.postbox li {
+  padding-bottom: 0.6em;
+  padding-left: 0.8em;
+  list-style-type: "\2022";
+}
+
 /*
 pre {
   width: 100%;
