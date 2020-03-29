@@ -213,7 +213,7 @@ code {
 
 
 /* Style Dropdown Button for any relevant menus  */
-.dropbtn {
+.dropdown__btn {
   padding: 0px;
   font-weight: 400;
   border: none;
@@ -227,7 +227,7 @@ code {
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.dropdown__content {
   display: none;
   position: absolute;
   background-color: var(--page-background);
@@ -240,12 +240,12 @@ code {
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdown__content a {
   text-decoration: none;
   color: var(--text-color);
 }
 /* Links inside the dropdown */
-.dropdownitem {
+.dropdown__item {
   padding: 2px 8px 2px 36px;
   text-indent: -12px;
   display: block;
@@ -253,34 +253,38 @@ code {
   min-height: 1.5rem;
 }
 
-.dropdown-subhead {
+.dropdown__subhead {
   color: var(--text-color);
   padding: 2px 4px;
   display: block;
   font-weight: 400;
 }
-.dropdown-exit {
+.dropdown__exit {
   padding: 2px 4px 4px 4px;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown__content a:hover {
   background-color: var(--dropbtn-bcolor);
   color: var(--linkh-color);
 }
 
+.dropdown.is-open .dropdown__content {
+  display: block;
+}
+
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown__content {
   display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropdown__btn {
   background-color: var(--dropbtn-bcolor);
   color: var(--linkh-color);
 }
-.dropdownsep {
+.dropdown__sep {
   color: var(--minsep-bcolor);
   border: 1px solid var(--minsep-color);
 }
