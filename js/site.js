@@ -17,6 +17,16 @@ document.addEventListener('DOMContentLoaded',function() {
       .then(myJson => {showCounts(index,JSON.parse(myJson));});
     */
 
+    /*  Add click behavior on dropdown menus so they work on touchscreens */
+    var dropdowns = document.querySelectorAll('.dropdown__btn');
+    dropdowns.forEach(function(toggle) {
+        toggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            var dropdown = event.target.parentNode;
+            dropdown.classList.toggle('isopen');
+        });
+    });
+
 },false);
 
 function pluralize(count,singular,plural) {

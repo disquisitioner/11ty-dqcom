@@ -39,16 +39,3 @@
 
   </ul>
 </nav>
-
-<script type="text/javascript">
-(function () {
-    var dropdowns = document.querySelectorAll('.dropdown__btn');
-    dropdowns.forEach(function(toggle) {
-        toggle.addEventListener('click', function(event) {
-            event.preventDefault();
-            var dropdown = event.target.parentNode;
-            dropdown.classList.toggle('isopen');
-        });
-    });
-});
-</script>

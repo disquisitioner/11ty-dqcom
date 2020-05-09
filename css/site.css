@@ -276,7 +276,7 @@ code {
   color: var(--linkh-color);
 }
 
-.dropdown.is-open .dropdown__content {
+.dropdown.isopen .dropdown__content {
   display: block;
 }
 

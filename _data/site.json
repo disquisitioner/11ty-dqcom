@@ -5,5 +5,7 @@
   "authorEmail": "david@disquisitioner.com",
   "authorHandle": "@david_bryant",
   "authorName": "David Bryant",
-  "authorAvatar": "/img/David-Bryant-600x.png"
+  "authorAvatar": "/img/David-Bryant-600x.png",
+  "webmentionEndpoint": "https://webmention.io/www.disquisitioner.com/webmention",
+  "pingbackEndpoint": "https://webmention.io/www.disquisitioner.com/xmlrpc"
 }
