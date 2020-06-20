@@ -1,0 +1,51 @@
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  max-width: none;
+}
+
+.chart {
+    width: 100%;
+}
+.control {
+	padding: 10px;
+}
+
+.ctrllabel {
+	font-weight: 600;
+}
+
+#stats {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.stattitle {
+	font-weight: 600; 
+}
+
+.curval {
+	font-size: 1.2em;
+}
+
+.widget{
+	text-align: center;
+	border: 1px solid var(--color-border);
+	padding: 8px; 
+}
+
+#duration, #plottype {
+	font-family: inherit;
+	font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 720px) {
+	#stats {
+		flex-direction: column;
+	}
+	.widget {
+		margin-bottom: 8px;
+	}
+}

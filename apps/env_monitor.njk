@@ -1,0 +1,44 @@
+---
+appTitle: Environmental Monitors
+appAuthor: david@orangemoose.com
+appDescription: Display recent data from a collection of custom-built environmental monitors
+appCssList: [ /css/env_monitor.css ]
+appJsList: [ /js/env_monitor.js, https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js, https://cdn.plot.ly/plotly-latest.min.js ]
+tags: [ app ]
+---
+{% extends 'app.njk' %}
+
+{% block appcontent %}
+<div class="control">
+    <div>
+      <label class="ctrllabel" for="location">Which Location?</label>
+      <select id="location" name="location">
+        <option value=0 selected>Garden Shed</option>
+        <option value=1>Cellar</option>
+      </select>
+    </div>
+</div>
+<div class="control">
+	<div>
+		<label class="ctrllabel" for="duration">Plot duration:</label>
+		<select id="duration" name="duration">
+			<option value=1 selected>1 hour</option>
+			<option value=3>3 hours</option>
+			<option value=6>6 hours</option>
+			<option value=12>12 hours</option>
+			<option value=24>24 hours</option>
+			<option value=168>1 week</option>
+		</select>
+	</div>
+</div>
+<p>
+	<div id="chart"></div>
+</p>
+<p>
+  Channel ID: <span id="chanid"></span><br>
+  Name: <span id="channame"></span><br>
+  Description: <span id="chandesc"></span><br>
+  Data Count: <span id="count"></span><br>
+</p>
+<div id="data"></div>
+{% endblock appcontent %}
