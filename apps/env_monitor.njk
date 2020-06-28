@@ -13,8 +13,9 @@ tags: [ app ]
     <div>
       <label class="ctrllabel" for="location">Which Location?</label>
       <select id="location" name="location">
-        <option value=0 selected>Garden Shed</option>
-        <option value=1>Cellar</option>
+      	{%- for monitor in env_monitors %}
+      		<option data-channel="{{ monitor.channel }}" data-key="{{ monitor.key }}" {{ monitor.selected }}>{{ monitor.name }} </option>
+  		{% endfor -%}
       </select>
     </div>
 </div>

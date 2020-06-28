@@ -1,0 +1,16 @@
+[
+  {
+    "id": "gardenshed",
+    "selected": "selected",
+    "name": "Garden Shed",
+    "channel": "1085121",
+    "key" : "17ELSEET4O568P5B"
+  },
+ {
+    "id": "cellar",
+    "selected": "",
+    "name": "Cellar Monitor",
+    "channel": "544249",
+    "key" : "7DOZYKVPMRESIV92"
+  }
+]

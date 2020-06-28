@@ -1,17 +1,6 @@
-var ts_channels = [
-    {
-      channel_id: "1085121",
-      channel_key: "17ELSEET4O568P5B"
-    },
-    {
-      channel_id: "544249",
-      channel_key: "7DOZYKVPMRESIV92"
-    }
-];
-
 var pdata = [ 
-  { x:[], y: [], type: 'scatter', name: "trace0"},
-  { x:[], y: [], type: 'scatter', name: "trace1"} 
+  { x:[], y: [], max: -10000, min: 10000, type: 'scatter', name: "trace0"},
+  { x:[], y: [], max: -10000, min: 10000, type: 'scatter', name: "trace1"} 
 ];
 
 var layout = {
@@ -41,29 +30,42 @@ document.addEventListener('DOMContentLoaded',function() {
 	document.querySelector('select[name="location"]').onchange=changeLocationHandler;
 
     // Make sure the plot drawn matches the selected duration & location, even on page reload
-    var l = getlocation();
+    var monitor = getlocation();
 	var d = getduration();
 
     // Fetch data and draw the chart
-    fetchndraw(l,d);
+    fetchndraw(monitor.channel,monitor.key,d);
 },false);
 
-// Get plot duration from control in web page
+// Get plot duration from control in web page.  This is a simple control so all
+// we need is the "value" attribute for the chosen duration <option>.
 function getduration()
 {
 	    var element = document.getElementById("duration");
     	return element.options[element.selectedIndex].value;
 }
-// Get plot type from control in web page
+// Get details on the monitor selected for display.  Returns an object with a 
+// number of useful attributes of the selected monitor based on "value" and
+// data attributes for the chosen location <option>
 function getlocation()
 {
 		var element = document.getElementById("location");
-    	return element.options[element.selectedIndex].value;
+		var mon_channel = element.options[element.selectedIndex].dataset.channel;
+		var mon_key     = element.options[element.selectedIndex].dataset.key;
+		var mon_name    = element.options[element.selectedIndex].text;
+
+		return {
+			channel: mon_channel,
+			key: mon_key,
+			name: mon_name
+		};
+
+    	// return element.options[element.selectedIndex].value;
 }
 
-function fetchndraw(location,duration)
+function fetchndraw(monitor_channel,monitor_key,duration)
 {
-  fetch("https://api.thingspeak.com/channels/" + ts_channels[location].channel_id + "/feeds.json?api_key=" + ts_channels[location].channel_key + "&results="+(duration*12))
+  fetch("https://api.thingspeak.com/channels/" + monitor_channel + "/feeds.json?api_key=" + monitor_key + "&results="+(duration*12))
 		.then(function(response) {
 		return response.json();
 		})
@@ -86,9 +88,13 @@ function renderdata(data) {
 	f.innerHTML = data.feeds.length;
 
 	// Discard previous data
-	for(i in pdata)  { pdata[i].x.length = 0;  pdata[i].y.length = 0; }
+	for(i in pdata)  { 
+		pdata[i].x.length = 0;  pdata[i].y.length = 0; 
+		pdata[i].max = -10000;  pdata[i].min = 10000;
+	}
   
     var p = document.getElementById("data");
+    p.innerHTML = "";
 
 	// Label plots based on field names in retrieved data
 	pdata[0].name = data.channel.field1;
@@ -102,25 +108,46 @@ function renderdata(data) {
 		data.channel.field1 + " = " + data.feeds[i].field1 + ", " +
 		data.channel.field4 + " = " + data.feeds[i].field4 + "<br>";
 		*/
+		tempf = data.feeds[i].field1;
+		humid = data.feeds[i].field4;
+		pdata[0].max = Math.max(pdata[0].max,tempf);
+		pdata[0].min = Math.min(pdata[0].min,tempf);
+
+		pdata[1].max = Math.max(pdata[1].max,humid);
+		pdata[1].min = Math.min(pdata[1].min,humid);
 
 		var t = moment.parseZone(data.feeds[i].created_at).local().format("YYYY-MM-DD HH:mm:ss");
-		pdata[0].x.push(t);  pdata[0].y.push(data.feeds[i].field1);
-		pdata[1].x.push(t);  pdata[1].y.push(data.feeds[i].field4);
+		pdata[0].x.push(t);  pdata[0].y.push(tempf);
+		pdata[1].x.push(t);  pdata[1].y.push(humid);
 	}
 	// Plot the data
 	Plotly.newPlot("chart",pdata,layout,config);
+	p.innerHTML += "Min/max: " + pdata[0].min + "\xB0F," + pdata[0].max + "\xB0F;" + 
+		pdata[1].min + "% RH," + pdata[1].max + "% RH <br>";
+	ldp = data.feeds[data.feeds.length-1];
+	p.innerHTML += "Overall min/max: " + ldp.field3 + "\xB0F, " + ldp.field2 + "\xB0F; " +
+		ldp.field6 + "% RH, " + ldp.field5 + "% RH<br>";
+	p.innerHTML += "Current: " + ldp.field1 + "\xB0F; " + ldp.field4 + "% RH<br>";
 }
 
 // Callback invoked when the user selects a new plot duration.  Different duration
 // means diferent data so we'll both fetch and draw (and we have to specify the
 // duration of data to be fetched, which we can get from the change event).
 function changeDurationHandler(event) {
-    var l = getlocation();
-    fetchndraw(l,event.target.value);
+    var monitor = getlocation();
+    fetchndraw(monitor.channel,monitor.key,event.target.value);
 }
 
 // Callback invoked when the user selects a new monitor location.  
 function changeLocationHandler(event) { 
   var d = getduration();
-  fetchndraw(event.target.value,d);
+
+  // Need to retrieve chosen monitor's channel ID and read API key from the
+  // data attributes stored in the <option> entry for that monitor
+  var loc = event.target;  // The "location" <select> element
+  var opt = loc.options[loc.selectedIndex]; // The selected <option> element
+  var mon_channel = opt.dataset.channel;
+  var mon_key = opt.dataset.key;
+
+  fetchndraw(mon_channel,mon_key,d);
 }
