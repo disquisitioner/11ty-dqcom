@@ -27,8 +27,62 @@ document.addEventListener('DOMContentLoaded',function() {
         });
     });
 
+    // Initialize page theme, perhaps from local storage 
+     if(!localStorage.getItem('sitetheme')) {
+        populateStorage();
+     }
+     else {
+        setSiteTheme();
+     }
+
 },false);
 
+/*
+ * Routines to support in-page dark/light theme toggling by manipulating
+ * CSS variables defined in site.css
+ */
+
+function toggleTheme() {
+  var selector = document.getElementById("themeswitch");
+  
+  if(selector.checked) {
+    localStorage.setItem('sitetheme','dark');
+  }
+  else {
+    localStorage.setItem('sitetheme','default');
+  }
+  setSiteTheme();
+}
+
+
+// Functions that support site theme control
+// Use local storage to retain the value of the user's theme selection
+function populateStorage() {
+  var selector = document.getElementById("themeswitch");
+  if(selector.checked) {
+    localStorage.setItem('sitetheme','dark');
+  }
+  else {
+    localStorage.setItem('sitetheme','default');
+  }
+}
+
+// Set the site color theme to match the locally stored value, using
+// the data-theme attribute to match styling in theme.css
+function setSiteTheme() {
+  // Retrieve theme setting from local storage
+  var sitetheme = localStorage.getItem('sitetheme');
+  // Activate theme via <html> data-theme attribute
+  document.documentElement.setAttribute('data-theme', sitetheme)
+
+  // Make sure theme selector matches chosen theme
+  var selector = document.getElementById("themeswitch");
+  if(sitetheme == 'default') selector.checked = false;
+  else                       selector.checked = true;
+}
+
+
+// Make a string plural or not based on count of items
 function pluralize(count,singular,plural) {
     if(count == 1) return singular;
     else           return plural;

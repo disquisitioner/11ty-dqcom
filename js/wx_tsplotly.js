@@ -76,7 +76,10 @@ function processndraw(data) {
 	// element.innerHTML = JSON.stringify(data.channel,null,4);
 
 	// Discard previous data
-	for(i in pdata)  { pdata[i].x.length = 0;  pdata[i].y.length = 0; }
+	for(i in pdata)  { 
+		pdata[i].x.length = 0;  pdata[i].y.length = 0; 
+		pdata[i].max = -10000;  pdata[i].min = 10000;
+	}
 
 	var otemp, itemp, bp, wind, gust, rain, raintoday;
 
@@ -141,13 +144,11 @@ function drawchart()
 	// Set some important plot layout attributes
 	var layout = {
 		title: plotlut[p].title,
-		responsive: true,
 		showlegend: true,
 		legend: {
 			orientation: "h",
 			y: -0.2
 		},
-		displayModeBar: false,
 		margin: {
 			l: 30,
 			r: 30
@@ -159,6 +160,12 @@ function drawchart()
 			showline: true
 		}
 
+	}
+	var config = {
+		responsive: true,
+		displayModeBar: false,
+		editable: false,
+		scrollZoom: false
 	}
 
 	// Update the data display "widgets" to show current values, max/min, etc.
@@ -200,7 +207,7 @@ function drawchart()
 	element.innerHTML = pdata[5].max;
 
 	// Draw the chart
-	Plotly.newPlot('chart', pdata, layout);
+	Plotly.newPlot('chart', pdata, layout, config);
  	
  }
 

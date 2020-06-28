@@ -21,7 +21,7 @@
           		    {%- if post.data.subtitle -%}
           			   <div class="postlistsubtitle">{{ post.data.subtitle }}</div>
           		    {%- endif -%}
-          		    <div class="pagedate"><a href="{{post.url}}" class="u-url">Posted: {{ post.data.date | dateDisplay }}</a></div>
+          		    <div class="pagedate"><a class="hoverlink" href="{{post.url}}" class="u-url">Posted: {{ post.data.date | dateDisplay }}</a></div>
                 </div>
 
                 {{ post.templateContent | safe }}

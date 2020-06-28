@@ -1,0 +1,28 @@
+[
+  {
+    "id": "default",
+    "name": "Light",
+    "colors" : {
+      "background": "#fff",
+      "text": "#000",
+      "primary": "#ff8a00",
+      "primaryOffset": "#e0e0e0",
+      "border": "#e0e0e0",
+      "backgroundOffset": "#f5f5f5",
+      "shadow": "0,0,0"
+    }
+  },
+ {
+    "id": "dark",
+    "name": "Dark",
+    "colors" : {
+      "background": "#121212",
+      "text": "#fff",
+      "primary": "#ff8a00",
+      "primaryOffset": "#ff8a00",
+      "border": "#424242",
+      "backgroundOffset": "#212121",
+      "shadow": "255,255,255"
+    }
+  }
+]

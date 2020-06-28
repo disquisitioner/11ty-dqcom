@@ -1,0 +1,32 @@
+---
+permalink: '/css/theme.css'
+excludeFromSitemap: true
+---
+{% macro colorscheme(colors) %}
+    --color-bg: {{ colors.background }};
+    --color-text: {{ colors.text }};
+    --color-border: {{ colors.border }};
+    --color-primary: {{ colors.primary }};
+    --color-primary-offset: {{ colors.primaryOffset }};
+    --color-bg-offset: {{ colors.backgroundOffset }};
+    --color-shadow: {{ colors.shadow }};
+{% endmacro %}
+
+{%- set default = themes|getTheme('default') -%}
+{%- set dark = themes|getTheme('dark') -%}
+
+:root {
+    {{- colorscheme(default.colors) }}
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        {{- colorscheme(dark.colors) }}
+    }
+}
+
+{% for theme in themes %}
+html[data-theme='{{ theme.id }}'] {
+    {{- colorscheme(theme.colors) }}
+}
+{% endfor %}

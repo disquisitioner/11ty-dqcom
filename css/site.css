@@ -1,32 +1,3 @@
-:root {
-    --page-background: #fff;  /* white */
-    --text-color: #000;       /* black */
-    --dropbdr-color: #e0e0e0;  /* light grey */
-    --dropbtn-bcolor: #f5f5f5;  /* nearly white (background) */
-    --majsep-color: #e0e0e0;
-    --minsep-color: #e0e0e0;
-    --link-color: #0000ee;    /* HTML standard color */
-    --linkv-color: #551a8b;   /* HTML standard color */
-    --linkh-color: #ff8a00;   /* Orange! */
-    --shadow-color: 0,0,0;
-    --pre-color: #e0e0e0;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-background: #121212;  /* very dark grey */
-    --text-color: #fff;       /* white */
-    --dropbdr-color: #424242;  /* medium dark gray */
-    --dropbtn-bcolor: #212121;  /* dark gray */
-    --majsep-color: #ff8a00;
-    --minsep-color: #424242;
-    --link-color: #80deea;    /* lighter teal than std */
-    --linkv-color: #80deea;   /* lighter teal than std */
-    --linkh-color: #ff8a00;   /* Orange! */
-    --shadow-color: 255,255,255;
-    --pre-color: #424242;
-  }
-}
-
 @media only screen and (max-width: 720px) {
   /* Narrow (small screen) */
   body {
@@ -38,7 +9,7 @@
 @media only screen and (min-width: 720px) {
   /* Other (not-narrow) screens */
   body {
-    margin: 40px 40px 40px 40px;
+    margin: 20px 40px 40px 40px;
     max-width: 700px;
   }
 }
@@ -49,16 +20,25 @@ html {
   font-weight: 300;
   line-height: 1.4rem;
   box-sizing: border-box;
-  background-color: var(--page-background);
-  color: var(--text-color);
 }
 
 body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s, color 0.4s;
 }
 
-a:link { color: var(--link-color); }
-a:visited { color: var(--linkv-color); }
-a:hover { color: var(--linkh-color); }
+/* General links in the body of pages, page text, etc. */
+a:link { color: var(--color-primary); }
+a:visited { color: var(--color-primary); }
+a:hover { color: var(--color-bg); background-color: var(--color-primary); }
+
+/* Special class for <a> links in menus, navbars, footers, with only hover highlight styling */
+.hoverlink         { text-decoration: none; }
+.hoverlink:link    { color: var(--color-text); }
+.hoverlink:visited { color: var(--color-text); }
+.hoverlink:hover   { color: var(--color-primary); background-color: var(--color-bg); }
+
 
 /* Resize headings (smaller than default) */
 h1 {
@@ -130,7 +110,6 @@ code {
 }
 */
 
-
 /* Site-wide main navigation bar */
 .navheader {
   width: 100%;
@@ -139,7 +118,7 @@ code {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--majsep-color);
+  border-bottom: 2px solid var(--color-primary-offset);
 }
 
 .sitetitle {
@@ -165,15 +144,6 @@ code {
   padding-right: 20px;
 }
 
-.navheader a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.navheader a:hover {
-  color: var(--linkh-color);
-}
-
 /* For pages that use the footer nav bar */
 .navfooter {
   width: 100%;
@@ -181,8 +151,8 @@ code {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 5px;
-  border-top: 2px solid var(--majsep-color);
+  margin-top: 10px;
+  border-top: 2px solid var(--color-primary-offset);
 }
 
 .footersitetitle {
@@ -208,16 +178,6 @@ code {
   padding-right: 20px;
 }
 
-.navfooter a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.navfooter a:hover {
-  color: var(--linkh-color);
-}
-
-
 /* Style Dropdown Button for any relevant menus  */
 .dropdown__btn {
   padding: 0px;
@@ -236,19 +196,19 @@ code {
 .dropdown__content {
   display: none;
   position: absolute;
-  background-color: var(--page-background);
+  background-color: var(--color-bg);
   font-size: 0.8rem;
   line-height: 1.1rem;
   text-align: left;
   min-width: 180px;
-  border: 1px solid var(--dropbdr-color);
-  box-shadow: 0px 8px 16px 0px rgba(var(--shadow-color),0.2);
+  border: 1px solid var(--color-border);
+  box-shadow: 0px 8px 16px 0px rgba(var(--color-shadow),0.2);
   z-index: 1;
 }
 
 .dropdown__content a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--color-text);
 }
 /* Links inside the dropdown */
 .dropdown__item {
@@ -260,7 +220,7 @@ code {
 }
 
 .dropdown__subhead {
-  color: var(--text-color);
+  color: var(--color-text);
   padding: 2px 4px;
   display: block;
   font-weight: 400;
@@ -268,12 +228,6 @@ code {
 .dropdown__exit {
   padding: 2px 4px 4px 4px;
   display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown__content a:hover {
-  background-color: var(--dropbtn-bcolor);
-  color: var(--linkh-color);
 }
 
 .dropdown.isopen .dropdown__content {
@@ -285,14 +239,13 @@ code {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
+/* Change the text color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropdown__btn {
-  background-color: var(--dropbtn-bcolor);
-  color: var(--linkh-color);
+  color: var(--color-primary);
 }
 .dropdown__sep {
-  color: var(--minsep-bcolor);
-  border: 1px solid var(--minsep-color);
+  color: var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 /* For pages that have titles & subtitles */
@@ -313,14 +266,6 @@ code {
 .pagedate {
   font-size: 0.8rem;
 }
-
-/* The 'Published' date for posts can be a link to the post */
-.pagedate a {
-  text-decoration: none;
-}
-.pagedate a:link { color: var(--text-color); }
-.pagedate a:visited { color: var(--text-color); }
-.pagedate a:hover { color: var(--linkh-color); }
 
 .apptitle {
   font-size: 2rem;
@@ -350,7 +295,7 @@ code {
 /* Style an <hr> to separate posts */
 .postseparator {
   width: 60%;
-  border: 1px solid var(--majsep-color);
+  border: 1px solid var(--color-primary-offset);
 }
 
 .postbox {
@@ -362,8 +307,8 @@ code {
   padding: 0;
   border: none;
   height: 2px;
-  background-image: linear-gradient(to left, rgba(0,0,0,0), var(--majsep-color), rgba(0,0,0,0));
-  color: var(--majsep-color);
+  background-image: linear-gradient(to left, rgba(0,0,0,0), var(--color-primary-offset), rgba(0,0,0,0));
+  color: var(--color-primary-offset);
 }
 
 /* Styling for displaying webmentions */
@@ -384,6 +329,77 @@ code {
   padding-right: 1.3vw;
   font-size: 0.8rem;
 }
+
+/* Slider experiment */
+ /* The switch - the box around the slider */
+ .slide_toggle {
+  padding-bottom: 10px;
+  float: right;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, lightskyblue, black);
+  /* background-image: url('/img/sun_moon_slider.png'); */
+  background-size: cover;
+  /* -webkit-transition: .4s;
+  transition: .4s; */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  /* border: 1px solid var(--color-primary); */
+  /* -webkit-transition: .4s;
+  transition: .4s; */
+}
+
+input:checked + .slider {
+  /* background-color: #2196F3; */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
 
 
 /* Rules for sizing icons. */

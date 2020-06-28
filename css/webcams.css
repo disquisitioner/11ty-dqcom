@@ -1,32 +1,3 @@
-:root {
-    --page-background: #fff;  /* white */
-    --text-color: #000;       /* black */
-    --dropbdr-color: #e0e0e0;  /* light grey */
-    --dropbtn-bcolor: #f5f5f5;  /* nearly white (background) */
-    --majsep-color: #e0e0e0;
-    --minsep-color: #e0e0e0;
-    --link-color: #0000ee;    /* HTML standard color */
-    --linkv-color: #551a8b;   /* HTML standard color */
-    --linkh-color: #ff8a00;   /* Orange! */
-    --shadow-color: 0,0,0;
-    --pre-color: #e0e0e0;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-background: #121212;  /* very dark grey */
-    --text-color: #fff;       /* white */
-    --dropbdr-color: #424242;  /* medium dark gray */
-    --dropbtn-bcolor: #212121;  /* dark gray */
-    --majsep-color: #ff8a00;
-    --minsep-color: #424242;
-    --link-color: #80deea;    /* lighter teal than std */
-    --linkv-color: #80deea;   /* lighter teal than std */
-    --linkh-color: #ff8a00;   /* Orange! */
-    --shadow-color: 255,255,255;
-    --pre-color: #424242;
-  }
-}
-
 html {
   font-family: 'Titillium Web';
   font-size: 1.0em;
@@ -57,12 +28,12 @@ body {
 
 .camgallery > figure {
   break-inside: avoid;
-  background-color: var(--page-background);
+  background-color: var(--color-bg);
   display: flex;
   flex-direction: column;
   margin: 0;
   border: 1px solid #424242;
-  box-shadow: 1px 3px 8px rgba(var(--shadow-color),0.5);
+  box-shadow: 1px 3px 8px rgba(var(--color-shadow),0.5);
 }
 .camgallery figcaption {
 }
@@ -87,7 +58,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(var(--shadow-color),0.8);
+  background-color: rgba(var(--color-shadow),0.8);
 }
 
 /* Dark mode in all cases */

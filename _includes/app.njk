@@ -19,6 +19,12 @@
 {% endblock head %}
 
 {% block content %}
+    <div class="slide_toggle">
+        <label class="switch">
+          <input id="themeswitch" type="checkbox" onclick="toggleTheme()">
+          <span class="slider round"></span>
+        </label>
+    </div>
     <header>
       <h1 class="apptitle">{{ appTitle }}</a></h1>
     </header>

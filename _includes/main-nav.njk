@@ -1,5 +1,11 @@
+<div class="slide_toggle">
+    <label class="switch">
+      <input id="themeswitch" type="checkbox" onclick="toggleTheme()">
+      <span class="slider round"></span>
+    </label>
+</div>
 <nav class="navheader">
-  <div class="sitetitle"><a href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
+  <div class="sitetitle"><a class="hoverlink" href="{{ site.url | url }}">{{ site.name or "Welcome!" }}</a></div>
   <div class="navmenu">
     <ul>
       <li>
@@ -9,11 +15,11 @@
             <span class="dropdown__subhead">Latest:</span>
             {%- for article in collections.article | reverse %}
               {%- if loop.index < 4 -%}
-                <a class="dropdown__item" href="{{ article.url | url }}">{{ article.data.title }}</a>
+                <a class="dropdown__item hoverlink" href="{{ article.url | url }}">{{ article.data.title }}</a>
               {%- endif -%}
             {%- endfor -%}
             <hr class="dropdown__sep" width=30%></hr>
-            <a class="dropdown__exit" href="/articles">See All Articles...</a>
+            <a class="dropdown__exit hoverlink" href="/articles">See All Articles...</a>
           </div>
         </div> 
       </li>
@@ -23,18 +29,18 @@
           <div class="dropdown__btn">Apps</div>
           <div class="dropdown__content">
             {%- for app in collections.appsAscending -%} 
-              <a class="dropdown__item" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
+              <a class="dropdown__item hoverlink" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
             {%- endfor -%}
           </div>
         </div> 
       </li>
 
       <li>
-        <a href="/photos">Photos</a>
+        <div class="navmenu__link"><a class="hoverlink" href="/photos">Photos</a></div>
       </li>
 
       <li>
-        <a href="/about">About</a>
+        <div class="navmenu__link"><a class="hoverlink" href="/about">About</a></div>
       </li>
 
   </ul>

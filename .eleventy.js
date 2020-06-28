@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   
   // Add some utility filters
   eleventyConfig.addFilter("dateDisplay", require("./utils/date.js") );
+  eleventyConfig.addFilter("getTheme", require("./utils/getTheme.js") );
 
   // Custom collection that sorts Applications alphabetically by title
   // Use: {%- for item in collections.appsAscending -%}
