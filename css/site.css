@@ -81,6 +81,12 @@ figcaption {
   font-weight: 400;
 }
 
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .postbox li {
   padding-bottom: 0.6em;
   padding-left: 0.8em;

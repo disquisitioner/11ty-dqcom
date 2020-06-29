@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded',function() {
 },false);
 
 /*
- * Routines to support in-page dark/light theme toggling by manipulating
- * CSS variables defined in site.css
+ * Routines to support in-page dark/light theme toggling
  */
 
 function toggleTheme() {

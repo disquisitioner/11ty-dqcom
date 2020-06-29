@@ -1,0 +1,18 @@
+---
+layout: post.njk
+title: Fun and Done
+date: 2020-06-28T18:11-0800
+photolink: [/photos/photo1.jpeg]
+tags: [post, indieweb, webdev, events]
+---
+<p>
+	Success!  As the result of today's project day at IndieWebCamp West I now have a working color scheme selector.  In the upper right corner of this page you'll see a slider that'll let you choose a light or dark color scheme for this and every other page on my site.  Most of the implementation is nearly identical to Max Böck's excellent <a href="https://mxb.dev/blog/color-theme-switcher/">Color Theme Switcher</a>, in my case simplified to just two themes with a simple toggle between them.  
+</p>
+<p>
+	Although I continue to be impressed with the power and productivity of <a href="https://www.11ty.dev/">Eleventy</a> as a static site generator and <a href="https://mozilla.github.io/nunjucks/templating.html">Nunjucks</a> templating built into it, I must say the biggest insight from my project today is the huge potential I see for using HTML5 <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">data attributes</a>.  I'd not encountered them previously and can already see a number of ways I can attach important semantic info to HTML elements and then extract and use that information in JavaScript or CSS, thereby avoiding having to keep those details manually in sync across HTML page layout in some files, CSS styling in others, and JavaScript functions in even more places.  
+</p>
+<p>
+	As an example (beyond the theme switcher I built today), my <a href="/apps/env_monitor/">Environmental Monitors</a> app pulls data from those monitors out of the ThingSpeak cloud database and to do so requires unique identifier attributes for each one.  With HTML data attributes I can embed those identifiers just in the HTML file and retrieve them where needed in CSS and JavaScript.  And with Nunjucks templating I can pull the data out of a single JSON file and put it everywhere I need it to be -- HTML, CSS, and JavaScript.  Awesome!
+<p>
+	And so <a href="https://indieweb.org/2020/West">IndieWebCamp West</a> 2020 comes to an end.  As usual, the last session of the day was a round of demos recapping everyone's hands-on project efforts. It's so impressive to see what everyone accomplished.  A focused day of innovation while surrounded by knowledgeable folks eager to help is a such a powerful thing.  Thanks again to all the organizers, volunteers, and participants for a great weekend. See you next time...
+</p>
