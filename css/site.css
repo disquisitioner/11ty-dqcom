@@ -57,6 +57,9 @@ h4 {
   font-size: 1rem;
   font-weight: 600;
 }
+strong {
+  font-weight: 600;
+}
 
 code[class*="language-"] {
  border-radius:0 !important;
@@ -88,9 +91,13 @@ img.center {
 }
 
 .postbox li {
-  padding-bottom: 0.6em;
-  padding-left: 0.8em;
+  padding: 0px 0px 0.6em 0.8em;
   list-style-type: "\2022";
+}
+
+
+.postbox li.tight {
+  padding: 0px 0px 0.0em 0.8em;
 }
 
 /*
