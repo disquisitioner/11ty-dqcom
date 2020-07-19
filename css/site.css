@@ -38,6 +38,8 @@ a:hover { color: var(--color-bg); background-color: var(--color-primary); }
 .hoverlink:link    { color: var(--color-text); }
 .hoverlink:visited { color: var(--color-text); }
 .hoverlink:hover   { color: var(--color-primary); background-color: var(--color-bg); }
+/* Likewise for <a> links that just contain images/figures */
+.piclink:hover { background-color: var(--color-bg); }
 
 
 /* Resize headings (smaller than default) */
@@ -82,6 +84,10 @@ figcaption {
   color: white;
   font-size: 0.8rem;
   font-weight: 400;
+}
+.figure_right {
+  float: right;
+  margin: 0 0 0 10px;
 }
 
 img.center {
