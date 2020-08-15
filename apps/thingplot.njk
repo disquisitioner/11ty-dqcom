@@ -1,0 +1,73 @@
+---
+appTitle: ThingSpeak Data Plots
+appAuthor: david@orangemoose.com
+appDescription: Display data from a ThingSpeak device (channel).  Dynamically discovers all data fields provided by the device and allows interactive selection of fields to be plotted.   Supports a custom time range for advanced queries.
+appCssList: [ /css/thingplot.css ]
+appJsList: [ /js/thingplot.js, https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js, https://cdn.plot.ly/plotly-latest.min.js ]
+tags: [ app ]
+---
+{% extends 'app.njk' %}
+
+{% block appcontent %}
+
+<div class="controlpanel">
+	<label class="ctrllabel" for="thing">Which thing?</label>
+	<select id="thing" name="thing">
+		{%- for thing in thingspeak %}
+			<option data-channel="{{ thing.channel }}" data-key="{{ thing.key }}" data-samperhr="{{ thing.samperhr }}" {{ thing.selected }}>{{ thing.name }} </option>
+		{% endfor -%}
+	</select>
+	<span></span>
+
+	<label class="ctrllabel" for="field">Which field(s)?</label>
+	<form id="fieldselection" class="p23">
+	    <div class="checkboxes">
+
+	      {# We need 8 nearly identical but unique checkboxes, so generate them with a loop #}
+	      {% for i in range(1,9) %}
+	      <div id="cbf{{i}}" class="cbf">
+	        <input type="checkbox" id="field{{i}}" name="field{{i}}" value="{{i - 1}}" {{"checked" if i == 1 else ""}}>
+	        <label id="fl{{i}}" for="field{{i}}">Field {{i}}</label>
+	      </div>
+	      {% endfor %}
+	    </div>
+	</form>
+
+	<label class="ctrllabel" for="duration">Plot duration:</label>
+	<select id="duration" name="duration">
+		<option value=1 selected>1 hour</option>
+		<option value=3>3 hours</option>
+		<option value=6>6 hours</option>
+		<option value=12>12 hours</option>
+		<option value=24>24 hours</option>
+		<option value=168>1 week</option>
+		<option value=0>Custom</option>
+	</select>
+	<span></span>
+
+    <span></span>
+	<div class="datepicker p23" id="datepicker">
+		<label for="startdate">Start</label>
+		<input type="date" id="startdate" name="startdate">
+		<label for"starttime"> at</label>
+		<input type="time" id="starttime" name="starttime">
+		<div><button type="button" onclick="plotCustomDuration()">Plot Custom Duration</button></div>
+		<label for="enddate">End</label>
+		<input type="date" id="enddate" name="data-end">
+		<label for"starttime">at</label>
+		<input type="time" id="endtime" name="endtime">
+		<span></span>
+	</div>
+</div>
+
+<p>
+	<div id="chart"></div>
+</p>
+<p>
+  Channel ID: <span id="chanid"></span><br>
+  Name: <span id="channame"></span><br>
+  Description: <span id="chandesc"></span><br>
+  Data Count: <span id="count"></span><br>
+</p>
+<div id="data"></div>
+{% endblock appcontent %}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "gardenshed",
+    "selected": "selected",
+    "name": "Garden Shed",
+    "channel": "1085121",
+    "key" : "17ELSEET4O568P5B",
+    "samperhr" : "12"
+  },
+ {
+    "id": "cellar",
+    "selected": "",
+    "name": "Cellar Monitor",
+    "channel": "544249",
+    "key" : "7DOZYKVPMRESIV92",
+    "samperhr" : "12"
+  },
+  {
+    "id": "remotewx",
+    "selected": "",
+    "name": "Remote WX",
+    "channel": "542108",
+    "key" : "LLI7SJHMDD3A1V1T",
+    "samperhr": "30"
+  },
+    {
+    "id": "homewx",
+    "selected": "",
+    "name": "Home Weather Station",
+    "channel": "544523",
+    "key" : "L42E70XGWQORK465",
+    "samperhr": "12"
+  }
+]
