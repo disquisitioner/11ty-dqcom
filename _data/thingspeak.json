@@ -23,12 +23,20 @@
     "key" : "LLI7SJHMDD3A1V1T",
     "samperhr": "30"
   },
-    {
+  {
     "id": "homewx",
     "selected": "",
     "name": "Home Weather Station",
     "channel": "544523",
     "key" : "L42E70XGWQORK465",
+    "samperhr": "12"
+  },
+  {
+    "id": "aqimonitor",
+    "selected": "",
+    "name": "Home AQI Monitor",
+    "channel": "1133867",
+    "key" : "7U3QBCY788QDE5JF",
     "samperhr": "12"
   }
 ]
