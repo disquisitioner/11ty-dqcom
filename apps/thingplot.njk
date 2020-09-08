@@ -12,7 +12,7 @@ tags: [ app ]
 
 <div class="controlpanel">
 	<label class="ctrllabel" for="thing">Which thing?</label>
-	<select id="thing" name="thing">
+	<select id="thing" class="p23" name="thing">
 		{%- for thing in thingspeak %}
 			<option data-channel="{{ thing.channel }}" data-key="{{ thing.key }}" data-samperhr="{{ thing.samperhr }}" {{ thing.selected }}>{{ thing.name }} </option>
 		{% endfor -%}
@@ -20,7 +20,7 @@ tags: [ app ]
 	<span></span>
 
 	<label class="ctrllabel" for="field">Which field(s)?</label>
-	<form id="fieldselection" class="p23">
+	<form id="fieldselection" class="p24">
 	    <div class="checkboxes">
 
 	      {# We need 8 nearly identical but unique checkboxes, so generate them with a loop #}
@@ -44,9 +44,10 @@ tags: [ app ]
 		<option value=0>Custom</option>
 	</select>
 	<span></span>
+	<span></span>
 
     <span></span>
-	<div class="datepicker p23" id="datepicker">
+	<div class="datepicker p24" id="datepicker">
 		<label for="startdate">Start</label>
 		<input type="date" id="startdate" name="startdate">
 		<label for"starttime"> at</label>
