@@ -1,0 +1,38 @@
+[
+ {
+ 	"label": "Look Rock, Great Smoky Mountains",
+	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grsm.jpg"
+  },
+  {
+  	"label": "Clingmans Dome, Great Smoky Mountains",
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grcd.jpg"
+  },
+  {
+  	"label": "Grand Canyon National Park",
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grca.jpg"
+  },
+  {
+  	"label": "Grand Teton National Park",
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grte.jpg"
+  },
+  {
+  	"label": "Yosemite High Sierra",
+  	"url": "https://pixelcaster.com/yosemite/webcams/sentinel.jpg"
+  },
+  {
+  	"label": "Augustine Island Volcano (Alaska)",
+  	"url": "https://avo.alaska.edu/webcam/augtst.jpg"
+  },
+  {
+  	"label": "Kilauea Crater from HVO Observation Tower",
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg"
+  },
+  {
+  	"label": "Kilauea Lower East Rift Zone",
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg"
+  },
+  {
+  	"label": "Mount Wilson Observatory, East",
+  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg"
+  }
+]
