@@ -4,12 +4,12 @@
   "description": "Simple blog-oriented web site based on Eleventy",
   "main": ".eleventy.js",
   "dependencies": {
-    "luxon": "^1.21.3",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5"
+    "luxon": "^1.24.1",
+    "markdown-it": "^11.0.0",
+    "markdown-it-anchor": "^5.3.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7"
   },
   "scripts": {

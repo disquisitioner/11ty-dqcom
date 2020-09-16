@@ -1,0 +1,32 @@
+---
+title: Countdown to Retirement
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Title }}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.25.0/luxon.min.js"></script>
+
+    <link rel="icon" href="/img/David-Bryant-icon128.jpg"/>
+    <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/404.css' | url }}">
+    <script src="{{ '/js/retirement.js' | url }}"></script>
+  </head>
+  <body>
+  	<div class="neonsign">
+  	<h1 id="days" class="neon" onclick="toggle_neon(this)">404</h1>
+  	<h2 class="flicker neon" onclick="toggle_neon(this)">More Working Days</h2>
+    <h2 class="flicker neon" onclick="toggle_neon(this)">Until Retirement</h2>
+	</div>
+	<div class="plain">
+      <p>
+  		  After today.&nbsp;&nbsp;  Last working day at Mozilla is December 31, 2020
+      </p>
+	</div>
+  </body>
+</html>
