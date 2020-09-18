@@ -1,7 +1,7 @@
 --- 
-appTitle: Webcam Window
+title: Webcam Window
+description: Windows to interesting places around the world through a collection of webcams.
 appAuthor: david@disquisitioner.com
-appDescription: Windows to interesting places around the world through a collection of webcams.
 appCssList: [ /css/webcams.css ]
 appJsList: [ /js/webcams.js, /js/luxon.min.js ]
 tags: [ app ]
@@ -11,10 +11,12 @@ tags: [ app ]
 {% block appcontent %}
 <div class="camgallery">
 	{% for cam in webcams %}
-	<figure>
-		<img src="{{ cam.url }}" onclick="openModal();currentCam({{ loop.index }});" class="thumb" alt="{{cam.label}}">
-		<figcaption>{{cam.label}}</figcaption>
-	</figure>
+	  {% if cam.active == "true" %}
+		<figure>
+			<img src="{{ cam.url }}" onclick="openModal();currentCam({{ loop.index }});" class="thumb" alt="{{cam.label}}">
+			<figcaption>{{cam.label}}</figcaption>
+		</figure>
+	  {% endif %}
 	{% endfor %}
 
 </div>

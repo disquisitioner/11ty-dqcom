@@ -1,38 +1,62 @@
 [
  {
- 	"label": "Look Rock, Great Smoky Mountains",
-	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grsm.jpg"
+   	"label": "Look Rock, Great Smoky Mountains",
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grsm.jpg",
+    "active": "true"
   },
   {
   	"label": "Clingmans Dome, Great Smoky Mountains",
-  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grcd.jpg"
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grcd.jpg",
+    "active": "true"
   },
   {
   	"label": "Grand Canyon National Park",
-  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grca.jpg"
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grca.jpg",
+    "active": "true"
   },
   {
   	"label": "Grand Teton National Park",
-  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grte.jpg"
+  	"url": "https://www.nps.gov/featurecontent/ard/webcams/images/grte.jpg",
+    "active": "true"
   },
   {
   	"label": "Yosemite High Sierra",
-  	"url": "https://pixelcaster.com/yosemite/webcams/sentinel.jpg"
+  	"url": "https://pixelcaster.com/yosemite/webcams/sentinel.jpg",
+    "active": "true"
+  },
+  {
+    "label": "El Capitan View",
+    "url": "https://pixelcaster.com/yosemite/webcams/turtleback.jpg",
+    "active": "false"
+  },
+  {
+    "label": "Yosemite Falls",
+    "url": "https://pixelcaster.com/yosemite/webcams/yosfalls.jpg",
+    "active": "false"
+  },
+  {
+    "label": "Half Dome from Ahwahnee",
+    "url": "https://pixelcaster.com/yosemite/webcams/ahwahnee2.jpg",
+    "active": "false"
   },
   {
   	"label": "Augustine Island Volcano (Alaska)",
-  	"url": "https://avo.alaska.edu/webcam/augtst.jpg"
+  	"url": "https://avo.alaska.edu/webcam/augtst.jpg",
+    "active": "true"
   },
   {
   	"label": "Kilauea Crater from HVO Observation Tower",
-  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg"
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg",
+    "active": "true"
   },
   {
   	"label": "Kilauea Lower East Rift Zone",
-  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg"
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg",
+    "active": "false"
   },
   {
   	"label": "Mount Wilson Observatory, East",
-  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg"
+  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
+    "active": "true"
   }
 ]
