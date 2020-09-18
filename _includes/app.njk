@@ -1,7 +1,6 @@
 {% extends 'base.njk' %}
 
 {% block head %}
-    {% if appDescription %} <meta name="description" content="{{ appDescription }}"> {% endif %}
     {% if appAuthor %} <meta name="author" content="{{ appAuthor }}">{% endif %}
     <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
     {%- if appCssList -%}
@@ -26,7 +25,7 @@
         </label>
     </div>
     <header>
-      <h1 class="apptitle">{{ appTitle }}</a></h1>
+      <h1 class="apptitle">{{ title }}</a></h1>
     </header>
 
     <main>

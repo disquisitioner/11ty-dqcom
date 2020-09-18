@@ -29,7 +29,7 @@
           <div class="dropdown__btn">Apps</div>
           <div class="dropdown__content">
             {%- for app in collections.appsAscending -%} 
-              <a class="dropdown__item hoverlink" href="{{ app.url }}">{{ app.data.appTitle }}</a> 
+              <a class="dropdown__item hoverlink" href="{{ app.url }}">{{ app.data.title }}</a> 
             {%- endfor -%}
           </div>
         </div> 

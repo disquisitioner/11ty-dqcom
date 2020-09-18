@@ -1,6 +1,7 @@
 ---
 layout: post.njk
 title: Post Title
+description: Brief description (optional)
 date: yyyy-mm-ddThh:mm-hhmm
 photolink: [/photos/photo1.jpeg]
 tags: [post, tag1, tag2]
