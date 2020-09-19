@@ -1,0 +1,56 @@
+---
+layout: article.njk
+title: Building an Air Quality Sensor
+description: Monitoring air quality has become an important aspect of daily life, what with the summer of 2020's fires and smoke.  Here's how I built my own air quality sensor.
+photolink: [/photos/aqi_project.jpg]
+date: 2020-09-19T09:47-07:00
+tags: [article, photo, maker, environment]
+---
+<figure>
+	<img src="/photos/aqi_plot_9_12sep20.png"/ width="100%">
+</figure>
+<p>
+	On top of everything else, 2020 has brought record wildfires to the Western US including central California where we live.  Dealing with the threat of the fires themselves, and we've had major ones within ten miles of our house, is a life-changing experience all on its own.  Beyond the anxiety about your home and everything in it being destroyed comes the new challenge of dealing with heavy smoke as part of daily "weather".  I've been monitoring weather conditions at home for almost eight years and have come to depend on information from our home weather station in a variety of ways every day.  Suddenly I wanted and needed to also be able to measure air quality at our house and to track and monitor changes so we could answer simple questions.  Would it be OK to open up the windows?  Should we wear a mask when we go outside, even just to the mailbox?  Are there concerning levels of particulates in the air even though we don't smell smoke?
+</p>
+<p>
+	Of course I could buy any number of well-built air quality monitoring devices, and I could even participate in a community-oriented air quality monitoring network like <a href="https://www2.purpleair.com/">PurpleAir</a> using one of their specialized sensors.  But for me there's a lot of fun (and learning) to be had in the designing and building something like that myself. I've built my own home weather station and network of remote sensing devices, after all.  As I knew from that experience there are three straightforward components to such a project -- a suitable sensor, a microcontroller that could read and report data from the sensor, and a little bit of software to handle all the operational elements.
+</p>
+	The software I knew I could build based on components from previous projects plus whatever examples I could find for the sensor I chose.  The microcontroller could be the same Adafruit Feather HUZZAH platform I was using elsewhere.  But what sensor is needed to measure air quality?  Unlike temperature or humidity, I learned there are a wide variety of metrics for air quality depending on whether you're concerned about the gasses you're breathing, chemicals that may be present in the air, or the size and nature of unseen airborne particles.  People can often have conditions that make them critically sensitive to one or more of these air quality factors, so there's no single answer as to what sensor you'd most need or want.
+</p>
+<h2>The Sensor</h2>
+<p>
+	In my case it seemed like a good starting point would be to measure the same "Air Quality Index (AQI)" that I was seeing my local news and area firefighters report on.  The official <a href="https://www.airnow.gov/aqi/aqi-basics/">U.S. Air Quality Index</a> is the US Government's Environmental Protection Agency (EPA) formal standard for measuring and reporting air quality in the context of health and safety concerns.  The EPA establishes an AQI for five major pollutants, with the value I was seeing regularly reported being the measure for particulates.  I therefore needed a "particulate sensor".
+</p>
+<p>
+	Measuring airborne particulates is an interesting challenge.  You need a simple way of analyzing a sample of air to see what's floating around in it, but the particles you're looking for are very small -- the EPA AQI is interested in those from 2.5 to 10 microns in diameter, where a micron is one millionth of a meter so about 0.000039 inch. And if you're going to do that continuously you need to maintain good airflow through the measuring device while you're scanning for those tiny particles.  The prevailing way of doing that these days, especially in low-cost devices, is a small scanner that shines a laser through a controlled sample of air and measures the shadows cast by particles as they pass through the laser beam.  That sounds exotic, but a good example of such a sensor and the one I chose for my project is the <a href="https://www.adafruit.com/product/3686">Plantower PM5003</a> which is $40.
+</p>
+<p>
+	Hooking the sensor up to an <a href="https://www.adafruit.com/product/2821">Adafruit Feather HUZZAH</a> was easy enough thanks to the breakboard included with the sensor and Adafruit's pre-built software library.   By design, the Plantower PM5003 isn't one of those sensors you can read data from whenever you'd like.  Instead it measures particulates passing through its air chamber and reports detailed results of its analysis about every second. That means the software has to be built to await data on that time scale and process it quickly enough that it can get back to waiting for data before the next set of results comes in.  While it's not documented anywhere I could find, I presume that if you missed one of those per-second reports you'd just lose that data and hopefully be able to catch the next report one second later.  Pretty quickly I had everything up and running and was reliably reading data from the sensor.
+	<figure>
+		<img width="100%" src="/photos/aqi_project.jpg"/>
+		<figcaption>Assembled AQI Components</figcaption>
+	</figure>
+</p>
+<h2>The Math</h2>
+<p>
+	I was surprised to learn that while the sensor reports all kinds of useful measurement data it didn't provide any value for AQI.  What you do get are detailed breakdowns of particulates of different sizes as measured in micrograms per cubic meter.  That took me back to the Internet to research how AQI is calculated.  I found websites that would <a href="https://www.airnow.gov/aqi/aqi-calculator/">do the math for me</a> if I entered numbers from my sensor but that wasn't what I wanted.  Happily, I eventually found the "AQI Equation" described in a <a href="https://forum.airnowtech.org/t/the-aqi-equation/169">post</a> on an AirNow discussion forum:
+	<br><img class="center" src="/photos/aqi_equation.PNG"><br>
+	Details on how to use the equation are in the forum post linked above, should you be interested in using it yourself.  The best short summary I can give here is that the AQI rating we use every day ranges from 0 to 500, and is broken in to bands ranging from "Good" to "Very Unhealthy" where each band is defined by the EPA based on specific ranges of particulate values in the same micrograms per cubic meter values the Plantower PM5003 sensor is reporting.  That's more complicated than I was expecting, but the good news is you can use that same equation to calculate an AQI reading for any size range of particulates.  Standard AQI results are calculated based on PM2.5 (2.5 micron) particles so that's the specific sensor data value to be used. 
+</p>
+<p>
+	Once I understood the AQI Equation it was straghtforward adding code to calculate AQI from the PM2.5 data the sensor was reporting every second. You'll find that and all the other code on <a href="https://github.com/disquisitioner/Feather-Huzzah">github</a>.  In addition to reading the sensor and calculating AQI I reused my usual code to allow the Feather HUZZAH to connect to my home wifi network and post every reported AQI measurement to Dweet.io as well as store it in the cloud using Thingspeak.
+	You can see the results through the <a href="/apps/dweetview">Dweet</a> and <a href="/apps/thingplot">Thingspeak</a> viewers here on disquisitioner.com. 
+</p>
+<h2>The Result</h2>
+<p>
+	Given I wanted to measure outside AQI, all that remained was to put the components in a weather resistant enclosure (but with a few holes safely located to allow good airflow yet keep moisture out) and locate the enclosure in a somewhat sheltered spot close enough to the house I could provide power and it could connect to home WiFi.  
+</p>
+<p>
+	The plot at the top of this post shows data collected by my home sensor during a period when smoke and haze was especially heavy, but to save you having to scroll back I'll repeat it again here. The peak value of 244.47 came on the morning of September 11, and that's well into the "Unhealthy" range:
+	<figure>
+		<img src="/photos/aqi_plot_9_12sep20.png"/ width="100%">
+	</figure>
+</p>
+<p>
+	I do have a few additional tasks in mind.  I can easily reuse the AQI Equation to calculate and report AQI for other particulate sizes, and PM10-based AQI seems to be almost as often used as PM2.5.  I also really should submit a pull request to the Adafruit sensor library to add the AQI Equation code to their example, as I have to believe everyone else using that sensor wants that to be part of the calculated results.  Still, looking at our home AQI readings has become as useful and important as I'd anticipated, and I can certainly understand why you'd want to do that too.
+</p>
