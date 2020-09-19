@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded',function() {
 
 function display_dtw()
 {
-	var dtw = document.getElementById("days");
 
 	var now = luxon.DateTime.local();
 	// var now = luxon.DateTime.local(2020,12,30,8,18);
@@ -30,7 +29,7 @@ function display_dtw()
 	if(now_wd == 8) now_wd = 1;
 	var retire_wd = retire.weekday;
 
-	var weeks = Math.floor((now_wd + deltat_days)/7);
+	var weeks = (now_wd + deltat_days)/7;
 	var wkend = Math.floor(weeks) * 2;
 	if(now_wd == 7) wkend--;
 	if(retire_wd == 6) wkend--;   // Isn't true, but for completeness
@@ -50,11 +49,15 @@ function display_dtw()
 
 	// OK. Working days = total days minus weekends and minus holidays
 	var daystowork = deltat_days - wkend - numhols;
+	var dtw = document.getElementById("days");
 	dtw.innerHTML = daystowork; 
+    tally = document.getElementById("tally");
+    tally.innerHTML = "(" + deltat_days + " total days, less " + wkend + " weekend days and " + numhols + " holidays)";
 
 	// Keep track of our current day number so we can detect a day change
 	current_day = now.ordinal;
 }
+
 
  function toggle_neon(el) {
    // If it's off, turn it on

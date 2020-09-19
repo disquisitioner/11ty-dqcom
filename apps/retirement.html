@@ -9,6 +9,7 @@ eleventyExcludeFromCollections: true
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <meta author="{{site.authorName}}, {{site.authorEmail}}">
     <meta name="description" content="{{ description }}">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600&display=swap" rel="stylesheet"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.25.0/luxon.min.js"></script>
@@ -28,6 +29,7 @@ eleventyExcludeFromCollections: true
       <p>
   		  After today.&nbsp;&nbsp;  Last working day at Mozilla is December 31, 2020
       </p>
+      <span id="tally"></span>
 	</div>
   </body>
 </html>
