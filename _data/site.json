@@ -7,5 +7,6 @@
   "authorName": "David Bryant",
   "authorAvatar": "/img/David-Bryant-600x.png",
   "webmentionEndpoint": "https://webmention.io/www.disquisitioner.com/webmention",
-  "pingbackEndpoint": "https://webmention.io/www.disquisitioner.com/xmlrpc"
+  "pingbackEndpoint": "https://webmention.io/www.disquisitioner.com/xmlrpc",
+  "paymentPointer": "$ilp.uphold.com/PPYk7XqeddQg"
 }
