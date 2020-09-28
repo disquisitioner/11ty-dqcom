@@ -30,7 +30,9 @@ tags: [ app ]
 		<span class="modal-close" id="close" onclick="closeModal()">&times;</span>
 
 		{% for cam in webcams %}
-			<img class="webcam" src="{{cam.url}}">
+			{% if cam.active == "true" %}
+				<img class="webcam" src="{{cam.url}}" alt="{{cam.label}}">
+			{% endif %}
 		{% endfor %}
 
 	    <!-- Next/previous controls -->
