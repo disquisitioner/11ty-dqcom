@@ -2,6 +2,9 @@
 
 {%- block head -%}
     <link rel="stylesheet" href="/css/photogallery.css">
+   {% if monetized %}
+      <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% endif %}
 {%- endblock -%}
 
 {% block content %}

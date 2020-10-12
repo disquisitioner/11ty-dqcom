@@ -1,7 +1,9 @@
 {% extends 'base.njk' %}
 
 {% block head %}
-    <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% if monetized %}
+      <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% endif %}
 {% endblock %}
 
 {% block content %}

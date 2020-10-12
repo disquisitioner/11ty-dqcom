@@ -2,7 +2,9 @@
 
 {% block head %}
     {% if appAuthor %} <meta name="developer" content="{{ appAuthor }}">{% endif %}
-    <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% if monetized %}
+      <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
     {%- if appCssList -%}
       {%- for cssfile in appCssList -%} 

@@ -1,5 +1,11 @@
 {% extends 'base.njk' %}
 
+{% block head %}
+    {% if monetized %}
+      <meta name="monetization" content="{{ site.paymentPointer }}">
+    {% endif %}
+{% endblock %}
+
 {%- block content -%}
 {%- include "main-nav.njk" -%}
 
