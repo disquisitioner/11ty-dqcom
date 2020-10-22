@@ -38,6 +38,9 @@ function display_dtw()
 	// that with Luxon.  Just check manually...
 	var holidays = [];  // Build look-up table of potential holidays
 	holidays.push(luxon.DateTime.local(2020,9,7,8,0));    // Labor Day
+	holidays.push(luxon.DateTime.local(2020,11,23,8,0));  // Monday of Thanksgiving (MoCo Holiday)
+	holidays.push(luxon.DateTime.local(2020,11,24,8,0));  // Tuesday of Thanksgiving  (  "  )
+	holidays.push(luxon.DateTime.local(2020,11,25,8,0));  // Wednesday of Thanksgiving  ( " )
 	holidays.push(luxon.DateTime.local(2020,11,26,8,0));  // Thanksgiving
 	holidays.push(luxon.DateTime.local(2020,11,27,8,0));  // Thanksgiving Fri
 	holidays.push(luxon.DateTime.local(2020,12,24,8,0));  // Christmas Eve
