@@ -12,8 +12,8 @@ module.exports = function(eleventyConfig) {
   // Custom collection that sorts Applications alphabetically by title
   // Use: {%- for item in collections.appsAscending -%}
   // Assumes individual apps will be listed as *.html in the apps subfolder
-  eleventyConfig.addCollection("appsAscending", (collection) =>
-    collection.getFilteredByTag("app").sort((a, b) => {
+  eleventyConfig.addCollection("menuAppsAscending", (collection) =>
+    collection.getFilteredByTag("menuapp").sort((a, b) => {
       if (a.data.appTitle > b.data.appTitle) return 1;
       else if (a.data.appTitle < b.data.appTitle) return -1;
       else return 0;

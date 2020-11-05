@@ -27,17 +27,17 @@
   {
     "label": "El Capitan View",
     "url": "https://pixelcaster.com/yosemite/webcams/turtleback.jpg",
-    "active": "false"
+    "active": "true"
   },
   {
     "label": "Yosemite Falls",
     "url": "https://pixelcaster.com/yosemite/webcams/yosfalls.jpg",
-    "active": "false"
+    "active": "true"
   },
   {
     "label": "Half Dome from Ahwahnee",
     "url": "https://pixelcaster.com/yosemite/webcams/ahwahnee2.jpg",
-    "active": "false"
+    "active": "true"
   },
   {
   	"label": "Augustine Island Volcano (Alaska)",

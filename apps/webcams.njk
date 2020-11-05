@@ -4,25 +4,64 @@ description: Windows to interesting places around the world through a collection
 appAuthor: David Bryant, david@disquisitioner.com
 appCssList: [ /css/webcams.css ]
 appJsList: [ /js/webcams.js, /js/luxon.min.js ]
-monetized: true
-tags: [ app ]
+monetized: false
+tags: [ app, menuapp ]
 ---
 {% extends 'app.njk' %}
 
 {% block appcontent %}
-<div class="camgallery">
-	{% for cam in webcams %}
-	  {% if cam.active == "true" %}
-		<figure>
-			<img src="{{ cam.url }}" onclick="openModal();currentCam({{ loop.index }});" class="thumb" alt="{{cam.label}}">
-			<figcaption>{{cam.label}}</figcaption>
-		</figure>
-	  {% endif %}
-	{% endfor %}
-
+<div id="campanel">
+	<div id="camgallery" class="camgallery">
+		{% set c = 0 %}
+		{% for cam in webcams %}
+		  {% if cam.active == "true" %}
+			<figure class="webcam" id="webcam{{c}}">
+				<img src="{{ cam.url }}" onclick="openModal();currentCam({{ c }});" class="thumb" alt="{{cam.label}}">
+				<figcaption>{{cam.label}}</figcaption>
+			</figure>
+			{% set c = c+1 %}
+		  {% endif %}
+		{% endfor %}
+	</div>
+	<div id="footerpanel">
+		<div id="panel">
+		    <input type="button" class="pushbtn" onclick="showSelection()" value="Select Webcams">
+	    </div>
+		<div class="camfooter">
+		  	Updated: <span id="dateDiv"></span>
+		</div>
+	</div>
 </div>
-<div class="camfooter">
-  Updated: <span id="dateDiv"></span>
+
+<div id="camselector">
+	<h2> Choose the webcams you'd like to view regularly.</h2>
+	<p>
+		You can change these any time you like.  Current selections are already indicated.
+	</p>
+	<form id="camselection">
+		<div id="menu">
+		{% set c = 0 %}
+		{% for cam in webcams %}
+			{% if cam.active == "true" %}
+				<div class="selector" id="sel{{c}}">
+					<div class="control">
+		            	<input type="checkbox" id="cam{{c}}" name="cam{{c}}" value={{c}}>
+              			<label id="fl{{c}}" for="cam{{c}}">{{cam.label}}</label>
+           			 </div>
+            		<div class="image">
+             			<img src="{{ cam.url }}">
+           			 </div>
+         		</div>
+				{% set c = c+1 %}
+         	{% endif %}
+        {% endfor %}
+        </div>
+    </form>
+    <div id="btnpanel">
+    	<input type="button" class="pushbtn" onclick="saveSelection();" value="Save Selections">
+    </div>
+</div>		
+
 </div>
 
 <div id="modal" class="modal">
@@ -32,7 +71,7 @@ tags: [ app ]
 
 		{% for cam in webcams %}
 			{% if cam.active == "true" %}
-				<img class="webcam" src="{{cam.url}}" alt="{{cam.label}}">
+				<img class="camimage" src="{{cam.url}}" alt="{{cam.label}}">
 			{% endif %}
 		{% endfor %}
 
