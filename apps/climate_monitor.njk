@@ -1,0 +1,40 @@
+---
+title: Climate Monitor
+description: Continually monitor indoor and outdoor temperature at home, along with air quality index. (Experimental)
+appAuthor: David Bryant, david@disquisitioner.com
+appCssList: [ /css/climate_monitor.css ]
+appJsList: [ /js/climate_monitor.js, https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js, https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js, https://cdn.plot.ly/plotly-latest.min.js ]
+tags: [ app ]
+monetized: false
+---
+{% extends 'app.njk' %}
+
+{% block appcontent %}
+<div class="wrapper">
+    <div id="graph"></div>
+    <div id="stats">
+		<div id="outtemp" class="widget">
+			<span class="stattitle">Outdoors</span>
+			<div class="curval"><span id="curotemp"></span> &deg;F</div>
+			<div><span>Max: </span><span id="maxotemp"></span> &deg;F</div>
+			<div><span>Min: </span><span id="minotemp"></span> &deg;F</div>
+		</div>
+		<div id="intemp" class="widget">
+			<span class="stattitle">Indoors</span>
+			<div class="curval"><span id="curitemp"></span> &deg;F</div>
+			<div><span>Max: </span><span id="maxitemp"></span> &deg;F</div>
+			<div><span>Min: </span><span id="minitemp"></span> &deg;F</div>
+		</div>
+		<div id="aqi" class="widget">
+			<span class="stattitle">AQI</span>
+			<div class="curval"><span id="curaqi"></span></div>
+			<div><span>Max: </span><span id="maxaqi"></span></div>
+			<div><span>Min: </span><span id="minaqi"></span></div>
+		</div>
+	</div>
+	<p>
+        <span class="label">Latest reading:&nbsp;</span><span id="latest"></span>
+    </p>
+    <input type="button" class="pushbtn" onclick="reduceData()" value="Trim Data (25%)">
+</div>
+{% endblock appcontent %}
