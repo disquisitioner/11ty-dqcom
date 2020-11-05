@@ -2,7 +2,7 @@
 // LATEST: https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js
 
 var mqttHost = "mqtt.thingspeak.com";
-var mqttPort = 80;
+var mqttPort = 443; // 80 if not TLS/SSL
 var username = "dbryant";
 var password = "3WDQKGINHS3CO90O";
 
@@ -74,6 +74,7 @@ function startConnect() {
             userName: username,           // Often ignored so can be any string
             password: password,       // For ThingSpeak must be account MQTT key
             reconnect: true,
+            useSSL: true,
             onSuccess: onAqiConnect,
             invocationContext: {
                 topic: aqiTopic,         // Will need topic in order to subscribe once connected
@@ -100,6 +101,7 @@ function startConnect() {
             userName: username,           // Often ignored so can be any string
             password: password,       // For ThingSpeak must be account MQTT key
             reconnect: true,
+            useSSL: true,
             onSuccess: onWxConnect,
             invocationContext: {
                 topic: wxTopic,         // Will need topic in order to subscribe once connected
