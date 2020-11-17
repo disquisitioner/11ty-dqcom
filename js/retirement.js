@@ -36,15 +36,19 @@ function display_dtw()
 
 	// Need to not count weekday holidays, but no easy way to do
 	// that with Luxon.  Just check manually...
-	var holidays = [];  // Build look-up table of potential holidays
+	var holidays = [];  // Build look-up table of work-approved holidays
 	holidays.push(luxon.DateTime.local(2020,9,7,8,0));    // Labor Day
-	holidays.push(luxon.DateTime.local(2020,11,23,8,0));  // Monday of Thanksgiving (MoCo Holiday)
-	holidays.push(luxon.DateTime.local(2020,11,24,8,0));  // Tuesday of Thanksgiving  (  "  )
-	holidays.push(luxon.DateTime.local(2020,11,25,8,0));  // Wednesday of Thanksgiving  ( " )
+	holidays.push(luxon.DateTime.local(2020,11,23,8,0));  // Mon of Thanksgiving (MoCo Day Off)
+	holidays.push(luxon.DateTime.local(2020,11,24,8,0));  // Tue of Thanksgiving (MoCo Day Off)
+	holidays.push(luxon.DateTime.local(2020,11,25,8,0));  // Wed of Thanksgiving (MoCo Day Off)
 	holidays.push(luxon.DateTime.local(2020,11,26,8,0));  // Thanksgiving
 	holidays.push(luxon.DateTime.local(2020,11,27,8,0));  // Thanksgiving Fri
 	holidays.push(luxon.DateTime.local(2020,12,24,8,0));  // Christmas Eve
 	holidays.push(luxon.DateTime.local(2020,12,25,8,0));  // Christmas Day
+	holidays.push(luxon.DateTime.local(2020,12,28,8,0));  // Mozilla Year-end Wellness Day
+	holidays.push(luxon.DateTime.local(2020,12,29,8,0));  // Mozilla Year-end Wellness Day
+	holidays.push(luxon.DateTime.local(2020,12,30,8,0));  // Mozilla Year-end Wellness Day
+	holidays.push(luxon.DateTime.local(2020,12,31,8,0));  // Mozilla Year-end Wellness Day
 	var numhols = 0;
 	for(var i=0;i<holidays.length;i++) {
 	  if(now < holidays[i]) numhols++;  // Luxon DateTime compare
