@@ -50,6 +50,11 @@
     "active": "true"
   },
   {
+    "label": "Kilauea Crater - Inner View",
+    "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KWcam/images/M.jpg",
+    "active": "true"
+  },
+  {
   	"label": "Kilauea Lower East Rift Zone",
   	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg",
     "active": "false"
