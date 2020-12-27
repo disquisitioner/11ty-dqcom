@@ -19,6 +19,20 @@ function display_dtw()
 	// The last working alarm clock morning is Dec 31, 2020
 	var retire = luxon.DateTime.local(2020,12,31,17,0);
 
+	// Did I already retire?
+	if(now > retire) {
+		// Yes, retirement day is in the past
+		var dtw = document.getElementById("days");
+		dtw.innerHTML = "No"; 
+		var tally_msg = document.getElementById("tally_msg");
+		tally_msg.innerHTML = "You've retired already!&nbsp;&nbsp;  Last working day at Mozilla was December 31, 2020";
+
+		var diffInDays = now.diff(retire,"days")
+	    var tally = document.getElementById("tally");
+	    tally.innerHTML = "(That was " + Math.floor(diffInDays.days) + " days ago)";
+	    return;
+	}
+
 	// How many actual days to my last day worked, after today?
 	var deltat_days = retire.ordinal - now.ordinal;
 
@@ -58,7 +72,9 @@ function display_dtw()
 	var daystowork = deltat_days - wkend - numhols;
 	var dtw = document.getElementById("days");
 	dtw.innerHTML = daystowork; 
-    tally = document.getElementById("tally");
+	var tally_msg = document.getElementById("tally_msg");
+	tally_msg.innerHTML = "After today.&nbsp;&nbsp;  Last working day at Mozilla is December 31, 2020";
+    var tally = document.getElementById("tally");
     tally.innerHTML = "(" + deltat_days + " total days, less " + wkend + " weekend days and " + numhols + " holidays)";
 
 	// Keep track of our current day number so we can detect a day change
