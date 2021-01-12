@@ -1,0 +1,12 @@
+---
+layout: post.njk
+title: Post Title
+description: Brief description (optional)
+date: yyyy-mm-ddThh:mm-hhmm
+photolink: [/photos/photo1.jpeg]
+monetized: false
+tags: [post, tag1, tag2]
+---
+<a class="piclink" href="/photos/photo1.png"><img src="/photos/photo1.png" width="100%"></a>
+
+SAVE AS 'post-some-title.html' (NOT .txt!) AND EDIT TO CREATE A POST.  BE SURE AND UPDATE THE TAGS AND REFERENCE(S) TO ANY PHOTOS.

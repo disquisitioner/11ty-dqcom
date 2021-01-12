@@ -1,0 +1,24 @@
+---
+layout: post.njk
+title: Untangling my Arduino Sketchbook (from the Arduino IDE)
+description: After years of use across many projects and multiple computers my overall Arduino development environment became unpredictably unusable, thanks to growing differences between my intentions for it and the Arduino project's evolution of their IDE.  Time to fix that.
+date: 2021-01-11T12:34-07
+monetized: false
+tags: [post, arduino, maker]
+---
+<p>
+	When I started working with Arduino back in 2012 I wanted to be able to do development on any of my computers, anywhere.  I was traveling quite a bit for work and had opportunities to tie my Arduino and maker projects into my job, so I wanted not only to be able to do development on my home desktop PC but also my work/travel MacBook.  My solution at the time was to setup my Arduino "sketchbook" of projects on Dropbox and sync that across systems.  Later on I added another small PC on my electronics workbench so I could do development there too. For years that worked wonderfully, allowing me easy and fluid access to all my projects from everywhere.
+</p>
+<p>
+	Sadly, those days appear to be over.  One afternoon not long ago I discovered I couldn't build even the most simple Arduino sketch, at least for some target boards.  At first I tried making sense of the error messages being generated about libraries being out of date or installed multiple times, but it eventually dawned on me the problem was fundamental to my setup and, unfortunately, decisions made in the evolution of the Arduino IDE. 
+</p> 
+<p>
+	In the early days the Arduino IDE installed all the board and library support components it needs in the same folder as your Sketchbook.  As you add more libraries and boards to your development environment all the associated tools go right alongside your sketches. Generally that's not been a problem as those components were platform-independent, so sharing all of that across multiple computers via Dropbox wasn't generally a problem.  At some point recently, though, the IDE started installing some development and runtime components in a completely separate and private folder that has to be local to the computer running the IDE. That meant, as best I can reconstruct it, all the board and library info in my sketchbook folder got out of sync with these additional local-only components, compounded by me installing or updating board or library files on different machines as I was doing development.
+</p>
+<p>
+	As someone with over forty years of software design and development, if that's indeed true I can only shake my head and say "Yuck."  What was once a simple development environment I could easily share across devices and platforms was now a tangled, broken mess.  The only thing I could figure to do was uninstall the Arduino IDE everywhere, clean up my mangled sketchbook folder hierarchy on Dropbox, and abandon the "develop anywhere" model I'd grown to enjoy.  Instead I'd install the Arduino IDE separatlely and independently on each system I was using and declare one of them as the "keeper of truth".  Use of GitHub repositories could give me some form of the multi-computer development capability I needed at the cost of pulls and pushes to manually keep code development efforts in sync.  And, if it came down to it, I could still copy Arduino sketches around indirectly through Dropbox.
+</p>
+<p>
+	Wanting to be thorough about it, I took the better part of two days to disentangle my existing Dropbox-based sketchbook, remove and clean install the Arduino IDE everywhere (a 
+	<a href="https://forum.arduino.cc/index.php?topic=362507.0">non-trivial thing</a> on its own, alas), build the new "keeper of truth" sketchbook collection, create some new GitHub repos, and re-establish everything on my various development machines.  I think I can make this new scheme work, but also can't help escaping the thought that it shouldn't be necessary for me to do so. If ONLY the Arduino IDE separated the concepts of where your (inherently platform independent) Sketchbook lives and where it wants to install its own components -- say in two different settings in the preferences dialog -- this could all have been avoided. Obviously, though, my particular use case isn't one the Arduino IDE folks intend to enable.  Too bad.
+</p>
