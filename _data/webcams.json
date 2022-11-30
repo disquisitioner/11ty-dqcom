@@ -63,5 +63,10 @@
   	"label": "Mount Wilson Observatory, East",
   	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
     "active": "true"
+  },
+  {
+        "label": "Mauna Loa, Northeast Rift Zone",
+  	"url": "https://volcanoes.usgs.gov/cams/M5cam/images/M.jpg",
+    "active": "true"
   }
 ]
