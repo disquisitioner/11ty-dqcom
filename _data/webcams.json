@@ -40,13 +40,13 @@
     "active": "true"
   },
   {
-  	"label": "Augustine Island Volcano (Alaska)",
-  	"url": "https://avo.alaska.edu/webcam/augtst.jpg",
+    "label": "Augustine Island Volcano (Alaska)",
+    "url": "https://avo.alaska.edu/webcam/augtst.jpg",
     "active": "true"
   },
   {
-  	"label": "Kilauea Crater from HVO Observation Tower",
-  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg",
+    "label": "Kilauea Crater from HVO Observation Tower",
+    "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/KIcam/images/M.jpg",
     "active": "true"
   },
   {
@@ -55,18 +55,28 @@
     "active": "true"
   },
   {
+    "label": "Halemaʻumaʻu vent and lava lake",
+    "url": "https://volcanoes.usgs.gov/observatories/hvo/cams/V1cam/images/M.jpg",
+    "active": "true"
+  },
+  {
   	"label": "Kilauea Lower East Rift Zone",
   	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/PGcam/images/M.jpg",
     "active": "false"
   },
   {
-  	"label": "Mount Wilson Observatory, East",
-  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
+        "label": "Mauna Loa, Northeast Rift Zone",
+  	"url": "https://volcanoes.usgs.gov/cams/M5cam/images/M.jpg",
     "active": "true"
   },
   {
-        "label": "Mauna Loa, Northeast Rift Zone",
-  	"url": "https://volcanoes.usgs.gov/cams/M5cam/images/M.jpg",
+        "label": "View of Mauna Loa from Mauna Kea",
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg",
+    "active": "true"
+  },
+  {
+  	"label": "Mount Wilson Observatory, East",
+  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
     "active": "true"
   }
 ]
