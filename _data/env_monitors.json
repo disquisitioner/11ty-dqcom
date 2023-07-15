@@ -12,5 +12,12 @@
     "name": "Cellar Monitor",
     "channel": "544249",
     "key" : "7DOZYKVPMRESIV92"
+  },
+  {
+    "id": "aqimonitor",
+    "selected": "",
+    "name": "Home AQI Monitor",
+    "channel": "1133867",
+    "key" : "7U3QBCY788QDE5JF"
   }
 ]
