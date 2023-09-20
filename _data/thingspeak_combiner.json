@@ -1,7 +1,7 @@
 {
-	"title": "Current Weather",
-	"description": "Consolidated view of current weather conditions at home gathered from various connected weather devices",
-	"subtitle": "Latest Reported Values",
+	"title": "ThingSpeak Combiner",
+	"description": "Display the latest values reported across a collection of ThingSpeak devices.",
+	"subtitle": "Current Readings",
 	"things" : [
 		{
 		    "id": "homewx",
