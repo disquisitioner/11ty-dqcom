@@ -1,0 +1,58 @@
+{
+	"title": "Current Weather at Home",
+	"description": "Consolidated view of current weather conditions at home gathered from various connected weather devices",
+	"subtitle": "Latest Reported Values",
+	"things" : [
+		{
+		    "id": "homewx",
+    		"name": "Home Weather Station",
+    		"channel": "544523",
+    		"key" : "L42E70XGWQORK465",
+    		"fields": [ 
+    			{
+    				"number": "2", 
+    				"label": "Outdoors",
+    				"units":  "&#176;F"
+    			},
+    			{
+    				"number": "4",
+    				"label": "Indoors",
+    				"units": "&#176;F"
+    			},
+    			{
+    				"number": "3",
+    				"label": "Barometer",
+    				"units": "in Hg"
+    			},
+    			{
+    				"number": "5",
+    				"label": "Wind Speed",
+    				"units": "MPH"
+    			},
+    			{
+    				"number": "6",
+    				"label" : "Wind Gust",
+    				"units": "MPH"
+    			},
+    			{
+    				"number": "8",
+    				"label" : "Rain Today",
+    				"units": "inches"
+    			}
+    		]
+		},
+	  	{
+    		"id": "aqimonitor",
+    		"name": "Home AQI Monitor",
+    		"channel": "1133867",
+    		"key" : "7U3QBCY788QDE5JF",
+    		"fields" : [
+    			{
+    				"number": "1",
+    				"label" : "AQI",
+    				"units" : ""
+    			}
+    		]
+  		}	
+	]
+}

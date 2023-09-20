@@ -1,0 +1,52 @@
+---
+appAuthor: David Bryant, david@disquisitioner.com
+appCssList: [ /css/current_weather.css ]
+appJsList: [ /js/thingcombiner.js, https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js ]
+monetized: false
+tags: [ app, menuapp ]
+eleventyComputed:
+  title: "{{ current_weather.title | default('Current Weather at Home') }}"
+  description: "{{ current_weather.description | default('Consolidated view of current weather conditions at home gathered from various connected weather devices') }}"
+---
+{# Based on a generalized ThingSpeak Combiner app skeleton. Key web page parameters #}
+{# including which ThingSpeak objects ("Things") and fields to display for each Thing #}
+{# are defined in an associated JSON file, allowing easy generation of new "Thing Combiner" #}
+{# web apps just by creating that associated JSON file, changing references here to the name #}
+{# of that JSON file, and modifying key front matter settings above (e.g., author, path to #}
+{# JS & CSS files, etc.). #}
+
+{% extends 'app.njk' %}
+
+{% block appcontent %}
+
+{# Use page subtitle from JSON data file, if specified there #}
+<h1>{{ current_weather.subtitle | default('Latest Reported Values') }}</h1>
+
+{# Operate on all Things specified in the JSON data file associated with this app instance #}
+{%- for thing in current_weather.things %}
+  <p>{{ thing.name }}
+  <ul class="thingvalues" data-thingid="{{ thing.id }}" data-channel="{{ thing.channel }}" data-key="{{ thing.key }}">
+  	{%- for field in thing.fields %}
+  	  <li class="valueinfo">
+  	    <span class="valuelabel">{{ field.label | safe }}:</span> 
+  	    <span class="value" id="{{ thing.id }}-{{ field.number }}">value</span>
+  	    <span class="valueunits">{{ field.units | safe }}</span>
+	    </li>
+  	{% endfor -%}
+  	<li>
+  		<span class="valuelabel">Updated:</span>
+  		<span id="{{ thing.id }}-time">n/a</span>
+		</li>
+  </ul>
+{% endfor -%}
+<div>
+	<span id="fetchlabel">Retrieved:</span>
+	<span id="fetchedat"></span>
+</div>
+
+<div>
+	<button id="update" type="button">Update</button>
+</div>
+
+
+{% endblock appcontent %}
