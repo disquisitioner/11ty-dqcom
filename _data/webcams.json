@@ -39,9 +39,34 @@
     "url": "https://pixelcaster.com/yosemite/webcams/ahwahnee2.jpg",
     "active": "true"
   },
+    {
+    "label": "Mount Wilson Observatory, East",
+    "url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
+    "active": "true"
+  },
   {
     "label": "Augustine Island Volcano (Alaska)",
-    "url": "https://avo.alaska.edu/webcam/augtst.jpg",
+    "url": "https://avo.alaska.edu/ashcam-api/images//aug_mound/current.jpg",
+    "active": "true"
+  },
+    {
+    "label": "Redoubt Volcano (Alaska)",
+    "url": "https://avo.alaska.edu/ashcam-api/images//redoubt-3/current.jpg",
+    "active": "true"
+  },
+    {
+    "label": "Shishaldin Volcano (Alaska)",
+    "url": "https://avo.alaska.edu/ashcam-api/images//shishaldin_brpk/current.jpg",
+    "active": "true"
+  },
+    {
+    "label": "Semisopochnoi Volcano (Alaska)",
+    "url": "https://avo.alaska.edu/ashcam-api/images//semi_cepe/current.jpg",
+    "active": "true"
+  },
+    {
+    "label": "Pavlof Volcano (Alaska)",
+    "url": "https://avo.alaska.edu/ashcam-api/images//pavlof_ps1a/current.jpg",
     "active": "true"
   },
   {
@@ -72,11 +97,6 @@
   {
         "label": "View of Mauna Loa from Mauna Kea",
   	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg",
-    "active": "true"
-  },
-  {
-  	"label": "Mount Wilson Observatory, East",
-  	"url": "https://hpwren.ucsd.edu/cameras/L/wilson-e-mobo-c.jpg",
     "active": "true"
   }
 ]
