@@ -92,6 +92,11 @@
   {
         "label": "Mauna Loa, Northeast Rift Zone",
   	"url": "https://volcanoes.usgs.gov/cams/M5cam/images/M.jpg",
+    "active": "false"
+  },
+  {
+        "label": "Kilauea Southwest Rift Zone",
+  	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/S1cam/images/M.jpg",
     "active": "true"
   },
   {
