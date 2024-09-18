@@ -95,13 +95,18 @@
     "active": "false"
   },
   {
-        "label": "Kilauea Southwest Rift Zone",
+    "label": "Kilauea Southwest Rift Zone",
   	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/S1cam/images/M.jpg",
     "active": "true"
   },
   {
-        "label": "View of Mauna Loa from Mauna Kea",
+    "label": "View of Mauna Loa from Mauna Kea",
   	"url": "https://volcanoes.usgs.gov/observatories/hvo/cams/MKcam/images/M.jpg",
+    "active": "true"
+  },
+  {
+    "label": "Nāpau Crater, East Rift Zone of Kīlauea",
+    "url": "https://volcanoes.usgs.gov/cams/S2cam/images/M.jpg",
     "active": "true"
   }
 ]
