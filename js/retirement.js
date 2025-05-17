@@ -29,7 +29,7 @@ function display_dtw()
 
 		var diffInDays = now.diff(retire,"days")
 	    var tally = document.getElementById("tally");
-	    tally.innerHTML = "(That was " + Math.floor(diffInDays.days) + " days ago)";
+	    tally.innerHTML = "(That was " + (1+Math.floor(diffInDays.days)) + " days ago)";
 	    return;
 	}
 
