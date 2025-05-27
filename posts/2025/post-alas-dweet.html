@@ -1,0 +1,60 @@
+---
+layout: post.njk
+title: Alas, the Disapperance of Dweet.io
+description: >
+    Alas the quiet disappearance of Dweet.io, a nifty "device tweeting"
+    service I've used in my IoT projects since it launched in 2014 (but which
+    you've probably never heard of). But perhaps it's not the end?
+date: 2025-05-26T16:48-07
+monetized: false
+tags: [post, internet, maker]
+---
+<!-- The post starts here -->
+<p>
+  In 2014 the fine folks at 
+  <a href="https://www.buglabs.net/">Bug Labs</a> launched Dweet.io, 
+  a free internet service
+  built to allow connected devices to post short, ephemeral messages containing
+  simple custom data payloads. The (excellent) idea behind the name is that was "Twitter
+  for devices" and so the messages published were "dweets" (as in "device tweets").
+  I loved the idea and incorporated Dweet support in most of my IoT projects, 
+  valuing its easy way to publish and view status messages from devices that 
+  didn't have a display, serial port, or log.  Want to know if the home weather 
+  station is operating properly? Check to see what its latest "dweet" contained 
+  and when it was posted, which you could do from any internet connected device 
+  anywhere.
+</p>
+<p>
+  Several weeks ago Dweet.io went silent, by which I mean the website
+  disappeared altogether and the service stopped allowing connections
+  to post or retrieve dweets.
+  I struggled a bit to figure out why given the entire site vanished, but 
+  eventually reached someone at Buglabs who explained they'd shut 
+  everything down. Alas.
+</p>
+<p>
+  Happily some anonymous folks have launched
+  <a href="https://dweet.me">Dweet.me</a>, which looks very similar to the
+  original but is still quite bareboned -- no documentation and no mention of
+  client libraries, but their <a href="https://github.com/dweetme">GitHub</a>
+  work is starting to grow and includes a Python client repo. Use of Dweet.me
+  continues to be free, which is great. They're also occasionally active on 
+  Bluesky at 
+  <a href="https://bsky.app/profile/dweet.me">@dweet.me</a> 
+</p>
+<p>
+  I'm cautiously exploring moving my devices onto Dweet.me as its API
+  and interfaces are slightly different. For now anything here that depended on 
+  Dweet.io, e.g., my 
+  <a href="http://localhost:8080/apps/dweetview/">Dweet Viewer</a> app, is 
+  broken. Sorry about that. I'll need to modify code compiled and loaded
+  into each dweeting device plus a few Python-based applications on Raspberry
+  Pi systems here and there. Much of that will find its way into GitHub repos
+  associated with those projects. I'll then need to tweak things here to use Dweet.me.
+  I'll keep you posted.
+</p>
+<p>
+  I want to express my appreciation to Bug Labs for conceiving, building
+  and operating Dweet.io for over a decade! Hopefully it can live on as Dweet.me
+  and perhaps grow as a community project.
+</p>
