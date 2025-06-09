@@ -38,5 +38,13 @@
     "channel": "1133867",
     "key" : "7U3QBCY788QDE5JF",
     "samperhr": "12"
+  },
+  {
+    "id": "poweredaq",
+    "selected": "",
+    "name": "Powered Air Quality",
+    "channel": "2982929",
+    "key" : "6IT8223JCW70SNEX",
+    "samperhr": "12"
   }
 ]
