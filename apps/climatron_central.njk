@@ -1,0 +1,79 @@
+---
+title: Climatron Central
+description: Display data from the worldwide collection of Climatrons, browsing data reported from individual units based on their unique device identifier.  Suports a custom time range for advanced queries.
+appAuthor: David Bryant, david@disquisitioner.com
+appCssList: [ /css/climatron_central.css ]
+appJsList: [ /js/climatron_central.js, https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js, https://cdn.plot.ly/plotly-3.5.0.min.js ]
+monetized: false
+tags: [ app, menuapp ]
+---
+{% extends 'app.njk' %}
+
+{% block appcontent %}
+
+
+<div class="controlpanel" id="central" data-channel="{{climatron_central.channel}}" data-key="{{climatron_central.key}}">
+	<label class="ctrllabel" for="thing">Climatron ID?</label>
+	<select id="climatron" class="p23" name="climatron">
+		{%- for climatron in climatrons %}
+			<option data-name="{{climatron.name}}" data-samperhr="{{ climatron.samperhr }}" {{ climatron.selected }}>{{ climatron.id }} </option>
+		{% endfor -%}
+	</select>
+	<span></span>
+
+	<label class="ctrllabel" for="field">Which field(s)?</label>
+	<form id="fieldselection" class="p24">
+	    <div class="checkboxes">
+
+	      {# We need 8 nearly identical but unique checkboxes, so generate them with a loop #}
+	      {% for i in range(1,9) %}
+	      <div id="cbf{{i}}" class="cbf">
+	        <input type="checkbox" id="field{{i}}" name="field{{i}}" value="{{i - 1}}" {{"checked" if i == 1 else ""}}>
+	        <label id="fl{{i}}" for="field{{i}}">Field {{i}}</label>
+	      </div>
+	      {% endfor %}
+	    </div>
+	</form>
+
+	<label class="ctrllabel" for="duration">Plot duration:</label>
+	<select id="duration" name="duration">
+		<option value=1 selected>1 hour</option>
+		<option value=3>3 hours</option>
+		<option value=6>6 hours</option>
+		<option value=12>12 hours</option>
+		<option value=24>24 hours</option>
+		<option value=168>1 week</option>
+		<option value=0>Custom</option>
+	</select>
+	<span></span>
+	<span></span>
+
+    <span></span>
+	<div class="datepicker p24" id="datepicker">
+		<label for="startdate">Start</label>
+		<input type="date" id="startdate" name="startdate">
+		<label for"starttime"> at</label>
+		<input type="time" id="starttime" name="starttime">
+		<div><button type="button" onclick="plotCustomDuration()">Plot Custom Duration</button></div>
+		<label for="enddate">End</label>
+		<input type="date" id="enddate" name="data-end">
+		<label for"starttime">at</label>
+		<input type="time" id="endtime" name="endtime">
+		<span></span>
+	</div>
+</div>
+
+<p>
+	<div id="chart"></div>
+</p>
+<p>
+  Climatron Name: <span id="climatron_name"></span><br>
+  Data Returned: <span id="climatron_count"></span><br>
+  Channel ID: <span id="chanid"></span><br>
+  Channel Name: <span id="channame"></span><br>
+  Description: <span id="chandesc"></span><br>
+  Total Data Count: <span id="count"></span><br>
+</p>
+<div id="data"></div>
+
+{% endblock appcontent %}
