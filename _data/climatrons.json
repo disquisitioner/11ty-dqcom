@@ -5,8 +5,23 @@
     "name": "EK 549F"
   },
  {
-    "id": "paq-002",
+    "id": "AirQuality-e8d9",
     "selected": "",
-    "name": "DBryant SEN66"
+    "name": "DBryant PAQ"
+  },
+ {
+    "id": "AirQuality-dce8",
+    "selected": "",
+    "name": "DBryant Living Room"
+  },
+  {
+    "id": "Climatron-ace8",
+    "selected": "selected",
+    "name": "EK Climatron"
+  },
+  {
+    "id": "Climatron-8853",
+    "selected": "selected",
+    "name": "DBryant Climatron"
   }
 ]

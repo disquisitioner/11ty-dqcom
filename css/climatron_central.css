@@ -2,6 +2,10 @@ body {
   max-width: none;
 }
 
+.apptitle {
+  font-family: 'Retro Gastroll', sans-serif;                                            
+}
+
 .controlpanel {
 	width: 700px;
 	margin: 0 auto;
