@@ -1,7 +1,37 @@
 [
   {
-    "id": "AirQuality-549f",
+    "id": "Climatron-ace8",
     "selected": "selected",
+    "name": "EK Climatron 1"
+  },
+  {
+    "id": "Climatron-ac81",
+    "selected": "",
+    "name": "EK Climatron 2"
+  },
+  {
+    "id": "Climatron-18cd",
+    "selected": "",
+    "name": "EK Climatron 3"
+  },
+  {
+    "id": "Climatron-1453",
+    "selected": "",
+    "name": "EK Climatron 4"
+  },
+  {
+    "id": "Climatron-b85e",
+    "selected": "",
+    "name": "MG Climatron"
+  },
+  {
+    "id": "Climatron-8853",
+    "selected": "",
+    "name": "DBryant Workbench"
+  },
+  {
+    "id": "AirQuality-549f",
+    "selected": "",
     "name": "EK 549F"
   },
  {
@@ -13,15 +43,5 @@
     "id": "AirQuality-dce8",
     "selected": "",
     "name": "DBryant Living Room"
-  },
-  {
-    "id": "Climatron-ace8",
-    "selected": "selected",
-    "name": "EK Climatron"
-  },
-  {
-    "id": "Climatron-8853",
-    "selected": "selected",
-    "name": "DBryant Climatron"
   }
 ]
